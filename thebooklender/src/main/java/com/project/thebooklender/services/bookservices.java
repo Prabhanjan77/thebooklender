@@ -10,6 +10,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -57,4 +58,13 @@ public class bookservices {
 		bookdao dao = new bookdao();
 		return dao.getBookByID(id);
 	}
+	
+	@GET
+	@Path("/search")
+	@Produces("application/json")
+	public List<Book> searchBooks(@QueryParam("category") String category,@QueryParam("title") String title)
+	{
+		bookdao dao = new bookdao();
+		return dao.searchBook(category, title);
+	}	
 }
