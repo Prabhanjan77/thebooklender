@@ -127,7 +127,7 @@ public class bookdao {
 				System.out.println(logHaed+" DB Connection Not Created :: ");
 			}
 		}catch(Exception e) {
-			System.out.println(logHaed+" Exception while searching new books "+e);
+			System.out.println(logHaed+" Exception while searching new books "+ e);
 			
 		}finally {
 			if(conn!=null) {

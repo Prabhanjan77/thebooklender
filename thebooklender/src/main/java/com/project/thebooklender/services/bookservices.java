@@ -59,10 +59,9 @@ public class bookservices {
 		return dao.getBookByID(id);
 	}
 	
-	@GET
-	@Path("/search")
+	@GET @Path("/search")
 	@Produces("application/json")
-	public List<Book> searchBooks(@QueryParam("category") String category,@QueryParam("title") String title)
+	public List<Book> searchBooks(@QueryParam("category") String category, @QueryParam("title") String title)
 	{
 		bookdao dao = new bookdao();
 		return dao.searchBook(category, title);
