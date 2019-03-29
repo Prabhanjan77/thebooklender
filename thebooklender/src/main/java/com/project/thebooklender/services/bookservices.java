@@ -66,4 +66,15 @@ public class bookservices {
 		bookdao dao = new bookdao();
 		return dao.searchBook(category, title);
 	}	
+	
+	@POST @Path("/requestbook")
+	@Consumes("application/json")
+	public Response requestBook(@QueryParam("title") String title,@QueryParam("requestedby") int id)
+	{
+		bookdao dao =  new bookdao();
+		dao.requestBook(title,id);
+		mailservices m = new mailservices();
+		m.sendmail(title);
+		return Response.ok().build();
+	}
 }

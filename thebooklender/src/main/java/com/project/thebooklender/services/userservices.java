@@ -1,4 +1,5 @@
 package com.project.thebooklender.services;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -43,6 +44,28 @@ public class userservices {
 		dao.addUser(user);
 
 		return Response.ok().build();
-	} 	
+	} 
 	
-}
+	@POST
+	@Path("/updateuser")
+	@Produces("application/json")
+	@Consumes("application/json")
+	public Response updateUser(User user,int id)
+	{
+		    System.out.print("update user");
+			user.setUser_name(user.getUser_name());
+			user.setUser_email(user.getUser_email());
+			user.setPassword(user.getPassword());
+			user.setAddress(user.getAddress());
+		
+		userdao dao = new userdao();
+		try{
+			dao.updateUser(user);
+			} 
+		catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}     
+		return Response.ok().build();
+		}
+	} 
