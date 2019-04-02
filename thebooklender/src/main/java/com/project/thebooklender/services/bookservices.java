@@ -1,6 +1,13 @@
 package com.project.thebooklender.services;
 
 import java.util.List;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -41,7 +48,6 @@ public class bookservices {
 			book.setIsbn(book.getIsbn());
 			book.setCategory(book.getCategory());
 			book.setOwner_id(book.getOwner_id());
-			book.setLent_to(book.getLent_to());
 		
 		bookdao dao = new bookdao();
 		dao.addBook(book);
@@ -69,12 +75,31 @@ public class bookservices {
 	
 	@POST @Path("/requestbook")
 	@Consumes("application/json")
-	public Response requestBook(@QueryParam("title") String title,@QueryParam("requestedby") int id)
+	public Response requestBook(@QueryParam("title") String title,@QueryParam("requestedby") int id,User user)
 	{
+		System.out.println("req");
 		bookdao dao =  new bookdao();
 		dao.requestBook(title,id);
 		mailservices m = new mailservices();
-		m.sendmail(title);
+		m.sendmail(title,user);
+		return Response.ok().build();
+	}
+	
+	@POST @Path("/issuebook")
+	@Consumes("application/json")
+	public Response issueBook(@QueryParam("transaction") int txn_id,@QueryParam("borrowerid") int bid,Book book)
+	{
+		 Calendar calendar = Calendar.getInstance();
+		 java.sql.Date dt = new java.sql.Date(calendar.getTime().getTime());
+		Transaction txn = new Transaction();
+		bookdao dao =  new bookdao();
+		txn.setTxn_id(txn_id);
+		txn.setTxn_date(dt);
+		txn.setBook_id(book.getId());
+		txn.setLender_id(book.owner_id);
+		txn.setBorrower_id(bid);
+		
+		dao.issueBook(txn);
 		return Response.ok().build();
 	}
 }

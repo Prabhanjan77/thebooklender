@@ -9,9 +9,8 @@ public class Book {
 		public String isbn;
 		public String category;
 		public int owner_id;
-    	public int lent_to;
         
-		public Book(int id,String book_id,String title,String author,String isbn,String category,int owner_id,int lent_to)
+		public Book(int id,String book_id,String title,String author,String isbn,String category,int owner_id)
 		{
 			super();
 			this.id=id;
@@ -21,7 +20,6 @@ public class Book {
 			this.isbn= isbn;
 			this.category=category;
 			this.owner_id=owner_id;
-			this.lent_to=lent_to;
 		}
 
 		public int getId() {
@@ -80,18 +78,11 @@ public class Book {
 			this.owner_id = owner_id;
 		}
 
-		public int getLent_to() {
-			return lent_to;
-		}
-
-		public void setLent_to(int lent_to) {
-			this.lent_to = lent_to;
-		}
 
 		@Override
 		public String toString() {
 			return "Book [id=" + id + ", book_id=" + book_id + ", title=" + title + ", author=" + author + ", isbn="
-					+ isbn + ", category=" + category + ", owner_id=" + owner_id + ", lent_to=" + lent_to + "]";
+					+ isbn + ", category=" + category + ", owner_id=" + owner_id + "]";
 		}
 
 }

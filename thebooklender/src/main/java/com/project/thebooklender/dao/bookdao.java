@@ -23,10 +23,9 @@ public class bookdao {
 			conn = dbConn.getDBConnection("root", "1234");
 			if (conn != null) {
 				Statement st = conn.createStatement();
-				String sql = "insert into book(book_id,title,author,isbn,category,owner_id,lent_to) values('"
+				String sql = "insert into book(book_id,title,author,isbn,category,owner_id) values('"
 						+ book.getBook_id() + "','" + book.getTitle() + "','" + book.getAuthor() + "','"
-						+ book.getIsbn() + "','" + book.getCategory() + "','" + book.getOwner_id() + "','"
-						+ book.getLent_to() + "');";
+						+ book.getIsbn() + "','" + book.getCategory() + "','" + book.getOwner_id() + "');";
 				System.out.println(logHaed + " SQL :: " + sql + " :: Result :: " + "your Data is saved");
 				result = st.executeUpdate(sql);
 				System.out.println(logHaed + " SQL :: " + sql + " :: Result :: " + "your Data is saved");
@@ -71,7 +70,6 @@ public class bookdao {
 					book.setIsbn(rs.getString("isbn"));
 					book.setCategory(rs.getString("category"));
 					book.setOwner_id(rs.getInt("owner_id"));
-					book.setLent_to(rs.getInt("lent_to"));
 				}
 				if (st != null)
 					st.close();
@@ -122,7 +120,6 @@ public class bookdao {
 					book.setIsbn(rs.getString("isbn"));
 					book.setCategory(rs.getString("category"));
 					book.setOwner_id(rs.getInt("owner_id"));
-					book.setLent_to(rs.getInt("lent_to"));
 
 					booklist.add(book);
 				}
@@ -262,7 +259,7 @@ public class bookdao {
 			for (int i = 1; i < ownerlist.size(); i++) {
 				inStatement.append(", ?");
 			}
-			PreparedStatement ps = conn.prepareStatement("select user_email from user where id in (" + inStatement.toString() + ")");
+			PreparedStatement ps = conn.prepareStatement("select user_email from users where id in (" + inStatement.toString() + ")");
 
 			int k = 1;
 			for (Integer key : ownerlist) {
@@ -274,5 +271,43 @@ public class bookdao {
 			}
 		}
 		return emaillist;
+	}
+	
+	public int issueBook(Transaction txn) {
+		String logHaed = "bookdao.class :: requestBook() ";
+		int result = -1;
+		List<Integer> list = new ArrayList<>();
+		java.sql.Connection conn = null;
+		java.sql.ResultSet rs = null;
+		DBConnection dbConn = new DBConnection();
+		try {
+			conn = dbConn.getDBConnection("root", "1234");
+			if (conn != null) {
+				Statement st = conn.createStatement();
+				// pick owner_id of particular title
+				String sql = "insert into transaction(txn_id,txn_date,book_id,lender_id,borrower_id) values ('"
+						+ txn.getTxn_id() + "','" + txn.getTxn_date() + "','" + txn.getBook_id() + "','"
+						+ txn.getLender_id() + "','" + txn.getBorrower_id() + "');";
+				System.out.println(logHaed + " SQL :: " + sql + " :: Result :: " + "your Data is saved");
+				result = st.executeUpdate(sql);
+				System.out.println(logHaed + " SQL :: " + sql + " :: Result :: " + "your Data is saved");
+			} else {
+				System.out.println(logHaed + " DB Connection Not Created :: ");
+			}
+		} catch (Exception e) {
+			result = -2;
+			System.out.println(logHaed + " Exception while adding new Books " + e);
+
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
 	}
 }

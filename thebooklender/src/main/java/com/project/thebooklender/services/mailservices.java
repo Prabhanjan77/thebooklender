@@ -17,18 +17,19 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 public class mailservices {
 
-	    public void sendmail(String title) {
+	    public void sendmail(String title,User user) {
             bookdao dao=new bookdao();
            // List<String> emaillist = new ArrayList<String>();
             List<String> recipientList = dao.getOwnerEmail(title);
             
-	        final String username = "prabhareddy1016@gmail.com";
-	        final String password = " ";  //removed password for now.
+	        final String username = 
+	        		"thebooklender2019@outlook.com";
+	        final String password = "admin@thebooklender";  //removed password for now.
 
 	        Properties props = new Properties();
 	        props.put("mail.smtp.starttls.enable", "true");
 	        props.put("mail.smtp.auth", "true");
-	        props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.host", "smtp-mail.outlook.com");
 	        props.put("mail.smtp.port", "587");
 
 	        Session session = Session.getInstance(props,
@@ -41,7 +42,7 @@ public class mailservices {
 	        try {
 
 	            Message message = new MimeMessage(session);
-	            message.setFrom(new InternetAddress("prabhareddy1016@gmail.com"));
+	            message.setFrom(new InternetAddress("thebooklender2019@outlook.com"));
 	           // String[] recipientList = emaillist.split();
 	            InternetAddress[] recipientAddress = new InternetAddress[recipientList.size()];
 	            int counter = 0;
@@ -52,9 +53,13 @@ public class mailservices {
 	            message.setRecipients(Message.RecipientType.TO, recipientAddress);
 	          //  message.setRecipients(Message.RecipientType.TO,
 	           //     InternetAddress.parse("mentlaprabhanjanreddy@gmail.com"));
-	            message.setSubject("Testing Subject");
-	            message.setText("Dear Mail Crawler,"
-	                + "\n\n No spam to my email, please!");
+	            message.setSubject("theBookLender");
+	            message.setText("Hi I am admin"
+	                + "\n\n Your book has been requested by following user"+
+	            		"\n\n UserName : "+ user.getUser_name() +
+	            		"\n\n UserEmail : "+ user.getUser_email() +
+	            		"\n\n UserAddress : "+user.getAddress() +
+	            		"\n\n Please issue or reject the request.Once you issue book update the same in portal");
 
 	            Transport.send(message);
 
