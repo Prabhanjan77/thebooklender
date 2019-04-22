@@ -8,13 +8,14 @@
 <script src="js/index.js"></script>
 <script src="js/register.js"></script>
 <script src="js/login.js"></script>
+ <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap-hover-dropdown.min.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/dropdown.css">
 
 <link rel="stylesheet" type="text/css" href="./css/cr.css">
-
+<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css">
 
 
 <link rel="stylesheet" href="assets/css/main.css">
@@ -130,17 +131,16 @@ font{
 				</div>
 				<div class="_1NLCcM">
 					<form class="_1WMLwI header-form-search" action="#" method="GET">
-						<div class="wor">
+<div class="wor">
 							<div class="loc-11-12 ">
 								<div class="O8ZS_U">
 									<input type="text" value="" class="LM6RPg"
-										title="Search for books" name="q"
 										autocomplete="off"
-										placeholder="Search for products, brands and more">
+										placeholder="Search for books" id="search-bar">
 								</div>
 							</div>
 							<div class="loc-1-12">
-								<button class="vh79eN" type="submit">
+								<a class="vh79eN" type="submit" id="search-button">
 									<svg width="20" height="20" viewBox="0 0 17 18" class=""
 										xmlns="http://www.w3.org/2000/svg">
 										<g fill="#2874F1" fill-rule="evenodd">
@@ -150,8 +150,11 @@ font{
 											d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path>
 										</g>
 									</svg>
-								</button>
+								</a>
+								
 							</div>
+							<input type="hidden" name="item.html?bookId=" value="search"> 
+						</div>
 							<input type="hidden" name="otracker" value="search"> <input
 								type="hidden" name="otracker1" value="search"> <input
 								type="hidden" name="marketplace" value="FLIPKART"> <input
@@ -511,7 +514,6 @@ font{
 		<hr />
 		<div class="row" style="text-align: center">
 			<div id="listing"></div>
-
 		</div>
 	</div>
 </body>
@@ -521,7 +523,7 @@ $(document).ready(function(){
 })	
 var ctxPath = "http://localhost:8082/thebooklender"
 	function loadListings(){
-	var name=localStorage.getItem("name"); 
+	var name=localStorage.getItem("user_name"); 
 	var ownerId=localStorage.getItem("id"); 
 	$("#prashant").text("Hi "+name);
 	console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
@@ -580,7 +582,54 @@ var ctxPath = "http://localhost:8082/thebooklender"
 		$('#listing').append(data);
 
 	}
-
+    
+	function ItemAutoComplete(itemList){
+		 /* console.log("gvhgvjhvjhvhjv "+itemList); */
+		var itemSearch = [];
+		for(var x in itemList){
+			var temp = {};
+			temp['id'] = itemList[x].id;
+			temp['value'] = itemList[x].title;
+			itemSearch.push(temp);
+			ani.push(temp);
+			items.push(itemList[x].title);
+			//console.log("ani print ="+ani[x].value);
+		}
+		$( "#search-bar" ).autocomplete({
+			  source: itemSearch,
+			  response: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  },
+			  select: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  }
+			});
+	}
+	
+	$("#search-button").click(function(){
+		console.log("search items ="+ani[0].value);
+		var searchVal = $("#search-bar").val();
+		console.log(searchVal);
+		for (var i in ani){
+			if(ani[i].value.includes(searchVal)){
+				searchVal=ani[i].id;
+			}
+		}
+		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		
+		/* if(items.includes(selectedItem)==true)
+			window.location.href = "item.jsp?id="+selectedId;
+		else
+			swal("", "No such item found", "error"); */
+	})
     
     function logout(){
     	localStorage.clear();
@@ -588,6 +637,76 @@ var ctxPath = "http://localhost:8082/thebooklender"
 
 		
 	</script>
+	<script type="text/javascript">
+	var selectedId;
+	var items = [];
+	var suggestionItems = [];
+	var ani = [];
+	
+	$.ajax({
+		type : 'GET',
+		url : "http://localhost:" + location.port + "/thebooklender/api/books/allbooks",
+		dataType : "json",
+		async: false,
+		success : function(itemList) {
+			/*  console.log("gvhgvjhvjhvhjv "+itemList); 
+ */			ItemAutoComplete(itemList);
+			},
+		error : function(err) {
+			alert(err.status);
+			}
+		});
+		
+	function ItemAutoComplete(itemList){
+		 /* console.log("gvhgvjhvjhvhjv "+itemList); */
+		var itemSearch = [];
+		for(var x in itemList){
+			var temp = {};
+			temp['id'] = itemList[x].id;
+			temp['value'] = itemList[x].title;
+			itemSearch.push(temp);
+			ani.push(temp);
+			items.push(itemList[x].title);
+			//console.log("ani print ="+ani[x].value);
+ 		}
+		$( "#search-bar" ).autocomplete({
+			  source: itemSearch,
+			  response: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  },
+			  select: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  }
+			});
+	}
+	
+	$("#search-button").click(function(){
+		console.log("search items ="+ani[0].value);
+		var searchVal = $("#search-bar").val();
+		console.log(searchVal);
+		for (var i in ani){
+			if(ani[i].value.includes(searchVal)){
+				searchVal=ani[i].id;
+			}
+		}
+		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		
+		/* if(items.includes(selectedItem)==true)
+			window.location.href = "item.jsp?id="+selectedId;
+		else
+			swal("", "No such item found", "error"); */
+	})
+	
+	</script>
+	
 <!-- <div style="margin:352px;"></div> -->
 <footer id="footer" class="footer color-bg">
 

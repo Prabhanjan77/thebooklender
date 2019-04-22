@@ -65,16 +65,18 @@ $(document).ready(function() {
   });
 
   $('#continue').click(function() {
-    var v99 = $('#email1').val();
+	  
+    var v99 = $('#email1').val();    
     console.log(v99);
     //		alert(mobileNo);
-    if(v99=="")
+   
+   if(v99=="" || !(/(.+)@(.+){2,}\.(.+){2,}/.test(v99)))
     {
-        document.getElementById("amit3").innerText = "this field is empty";
+        document.getElementById("amit3").innerText = "Not A Valid Email";
 
     }
     else{
-    var url = "/thebooklender/api/buyer/validate";
+    var url = "/thebooklender/api/users/validate";
     jQuery.ajax({
       url: url,
       type: "POST",

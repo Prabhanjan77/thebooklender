@@ -173,6 +173,7 @@ select, input[type=text], input[type=password] {
 										</g>
 									</svg>
 								</a>
+								
 							</div>
 							<input type="hidden" name="item.html?bookId=" value="search"> 
 						</div>
@@ -576,8 +577,7 @@ select, input[type=text], input[type=password] {
 											<span></span>
 										</div>
 										<div class="button-holder fadeInDown-3">
-											<a href="requested.html"
-												class="btn-lg btn btn-uppercase btn-primary shop-now-button">Request Book</a>
+											<button id='reqBook' class='btn btn-primary' onclick='loginpopupreq()' type='button'>Request a Book</button>
 										</div>
 									</div>
 									<!-- /.caption -->
@@ -597,8 +597,7 @@ select, input[type=text], input[type=password] {
 											<span></span>
 										</div>
 										<div class="button-holder fadeInDown-3">
-											<a href="addbook.html"
-												class="btn-lg btn btn-uppercase btn-primary shop-now-button">Add Book</a>
+											<button id='lendBook' class='btn btn-primary' onclick='loginpopuplend()' type='button'>Lend a Book</button>
 										</div>
 									</div>
 									<!-- /.caption -->
@@ -610,8 +609,6 @@ select, input[type=text], input[type=password] {
 						</div>
 						<!-- /.owl-carousel -->
 					</div>
-	
-	
 	</div>
 
 <!-- /.breadcrumb -->
@@ -1970,7 +1967,11 @@ $(document).ready(function() {
 	newProductsAll();
 	newProductsAll1();
 	newProductsAll2();
-	
+	if(name==" ")
+	{
+	 document.getElementById("reqBook").style.visibility = "hidden";
+	 document.getElementById("lendBook").style.visibility = "hidden";
+	}
 });
 /* 	var ctxPath = "http://localhost:" + location.port + "/thebooklender/api/carosel/getAllItemsForACategory/'Algorithm'";
 	//console.log(ctxPath);
@@ -2240,6 +2241,19 @@ function newProductsAll1()
     		function(){}
 	});
 }
+
+function loginpopupreq()
+{
+		console.log("clik");
+		window.location.href="http://localhost:8080/thebooklender/allbooks.html";
+}
+
+function loginpopuplend()
+{
+		console.log("clik");
+		window.location.href="http://localhost:8080/thebooklender/addbook.html";
+}
+
 
 </script>
 
