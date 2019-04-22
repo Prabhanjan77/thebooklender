@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<!-- replace all 'row'->'wor' & 'col'->'loc' to avoid classes conflict with bootstrap -->
+<head>
+<link title="Search Range" rel="icon" type="image/gif/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLplBpU6vn5cBgK8V_mMq476YQXMBdsFIzK83txzcL0JwXDmPd">
+<title>Home</title>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+<script src="js/bootstrap-hover-dropdown.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/dropdown.css">
+
+<link rel="stylesheet" type="text/css" href="./css/cr.css">
+
+
+
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/blue.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/owl.transitions.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/rateit.css">
+<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+<link rel="stylesheet" href="//img1a.flixcart.com/www/linchpin/fk-cp-zion/css/app.chunk.5eb25c.css" />
+<link rel="stylesheet" href="//img1a.flixcart.com/www/linchpin/fk-cp-zion/css/Home.chunk.b02da8.css" />
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- slider CSS -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Customizable CSS -->
+<link rel="stylesheet" href="./bootstrapFiles/css/rateit.css">
+
+<!-- Icons/Glyphs -->
+<link rel="stylesheet" href="./bootstrapFiles/css/font-awesome.css">
+<link rel="stylesheet" href="./bootstrapFiles/fontawesome-all.css">
+<script src="js/bootstrap.min.js"></script>
+
+<style>
+font{
+  font-family:"New Century Schoolbook";
+  font-style: normal;
+  font-variant: small-caps;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.box {
+  transition: box-shadow .3s;
+  width: 220px;
+  height: 320px;
+  background: #fff;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left:50px;
+
+}
+.box:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
+  
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.round3 {
+  border: 1px solid blue;
+  border-radius: 10px;
+  text-align: center;
+  border-collapse: separate;
+  margin-bottom: 5px;
+  border-spacing: 15px;
+  
+}
+.img{
+	border-radius: 50%;
+	border: 1px solid Black;
+}
+::placeholder {
+  color: black;
+  opacity: 50; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: black;
+}
+
+#carosel {
+	width: 100%;
+	max-height: 500px;
+}
+
+.carousel-inner {
+	width: 100%;
+	max-height: 500px !important;
+}
+
+.carousel-inner  .item  img {
+	width: 100%;
+	height: 200px;
+}
+
+.container {
+	width: 100%;
+}
+</style>
+
+
+
+</head>
+<body>
+	<header class="CGBNf7">
+		<div class="_1tz-RS">
+			<div class="AsXM8z">
+				<div class="_2OJxl5">
+					<a href="index.html"><img width="180"
+						src="img/cooltext319580814447697.png" alt="Booklender"
+						title="Booklender" class="jnSYHL"></a>
+				</div>
+				<div class="_1NLCcM">
+					<form class="_1WMLwI header-form-search" action="#" method="GET">
+						<div class="wor">
+							<div class="loc-11-12 ">
+								<div class="O8ZS_U">
+									<input type="text" value="" class="LM6RPg"
+										title="Search for books" name="q"
+										autocomplete="off"
+										placeholder="Search for books">
+								</div>
+							</div>
+							<div class="loc-1-12">
+								<button class="vh79eN" type="submit">
+									<svg width="20" height="20" viewBox="0 0 17 18" class=""
+										xmlns="http://www.w3.org/2000/svg">
+										<g fill="#2874F1" fill-rule="evenodd">
+											<path class="_2BhAHa"
+											d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path>
+											<path class="_2BhAHa"
+											d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path>
+										</g>
+									</svg>
+								</button>
+							</div>
+							<input type="hidden" name="otracker" value="search"> <input
+								type="hidden" name="otracker1" value="search"> <input
+								type="hidden" name="marketplace" value="FLIPKART"> <input
+								type="hidden" name="as-show" value="off"> <input
+								type="hidden" name="as" value="off">
+						</div>
+					</form>
+				</div>
+				<div class="_1Wr4v5">
+					<div class="dropdown" id="registered">
+						<div class="JvUE0p">
+							<a href="#"
+								style="font-size: 16px; letter-spacing: 0.1px; font-weight: 600; color: white;"
+								id="menu1" data-hover="dropdown" class="dropdown-toggle"
+								data-toggle="dropdown"><span id="prashant"></span><span
+								class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;">
+									<a href="myprofile.html"><i style="color: #157ed2"
+										class="fa fa-user"></i>&nbsp;&nbsp; My profile
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+								</li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;"><a
+									href=notification.html> <i style="color: #157ed2"
+										class="fas fa-bell"></i>&nbsp;&nbsp;
+										Notification&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; height: 140%; width: 100%;"><a
+									href="addbook.html"> <i style="color: #157ed2"
+										class="fas fa-book"></i>&nbsp;&nbsp; Add
+										Book&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;"><a
+									href="index.html" onclick="logout()"> <i
+										style="color: #157ed2" class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;
+										Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="unregistered">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="anirudh">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai1">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai2">Login &amp; Register</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</header>
+
+	<!-- Body -->
+	<!-- model for login page -->
+	<!-- added modal here -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<!-- set width and height here -->
+			<div class="modal-content" style="padding: 0">
+				<div class="modal-body" style="padding: 0">
+					<div id="loginModal" class="uMF2cc" style="display: none;">
+						<div class="_1XBjg- wor _3Nz-h3">
+							<div class="Og_iib loc loc-2-5 _2Bol6j">
+								<span class="_1hgiYz"><span>Login</span></span>
+								<p class="_1NJjZd">
+									<span>Request and Lend the Book Made Easier</span>
+								</p>
+								<!-- <img src="./img/bok.jpg" width="60%"></img> -->
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form id="loginForm" autocomplete="off">
+										<div class="_39M2dM">
+											<input type="text" name="user_email" autocomplete="off"
+												autofocus="" class="_2zrpKA" value="" id="user_email"
+												placeholder="Enter Email Id"> <span
+												class="s-YM1W"></span>
+											<!--<label class="b5konl"><span>Enter Email/Mobile number</span></label>-->
+											<!--label-->
+											<span class="ZAtlA-" id="amit2"></span>
+											<!--warning incorrect login-->
+										</div>
+
+										<!--					<span class="ZAtlA-"><span>Your username or password is incorrect</span></span> -->
+
+										<div class="_39M2dM">
+											<input type="password" name="password" autocomplete="off"
+												class="_2zrpKA _3v41xv" value="" id="pas"
+												placeholder="Enter Password"> <span class="s-YM1W"></span>
+											<!--	<label class="b5konl"><span>Enter Password</span></label>-->
+											<a class="_21JmK0 _1__46T" tabindex="-1"><span>Forgot?</span></a>
+										</div>
+
+										<div class="_1avdGP">
+											<button id="loginButton" class="_2AkmmA _1LctnI _7UHT_c">
+												<div class="_2VTdOs _1_qmw3">
+													<svg class="_2zN0mv" viewBox="25 25 50 50">
+														<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+															r="20" fill="none" stroke-width="5"
+															stroke-miterlimit="10"></circle>
+													</svg>
+												</div>
+												<span>Login</span>
+												<!-- changed id 'signUpb1' to class -->
+											</button>
+										</div>
+										<a class="_2AkmmA _1LctnI jUwFiZ signUpb1"><span>New
+												to Booklender? Register</span></a>
+										<div class="_2Q8OlA">
+											<div class="S5kkau">
+												<span>We no longer support login via Social accounts.
+													To recover your old accounts please </span>
+												<div class="_20yN1P">
+													<span class="_2ykT1U">click here</span>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--first signup page that appears on clicking " new to flipkart? sign up "-->
+					<div id="signUpModal1" class="_32LSmx" style="display: none;">
+						<div class=" _1XBjg- wor">
+							<div class="Og_iib loc loc-2-5">
+								<span class="_1hgiYz"><span>Register</span></span>
+								<p class="_1NJjZd">
+									<span>We do not share your personal details with anyone.</span>
+								</p>
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form>
+										<!-- added id 'mob1' here -->
+										<div class="_39M2dM">
+											<input type="email" maxlength="100" autocomplete="off"
+												class="_2zrpKA" value="" id="email1"
+												placeholder="Enter Email Id"> <span
+												class="s-YM1W"></span><label class="b5konl"> <!--<span>Enter Mobile number</span>-->
+											</label> <span class="ZAtlA-" id="amit3"></span>
+
+										</div>
+									</form>
+									<!-- added id 'continue' here -->
+									<div class="_1avdGP">
+										<button class="_2AkmmA _1LctnI _7UHT_c" id="continue">
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+											<span>CONTINUE</span>
+											<!-- added class 'logInb1' here, and removed hyperlink href="https://www.flipkart.com/account/login?ret=/" -->
+										</button>
+										<a class="_2AkmmA _1LctnI jUwFiZ logInb1"><span>Existing
+												User? Log in</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--second signup page that appears on clicking " continue "-->
+					<div id="signUpModal2" class="_32LSmx" style="display: none;">
+						<div class="_1XBjg- wor">
+							<div class="Og_iib loc loc-2-5">
+								<span class="_1hgiYz"><span>Register</span></span>
+								<p class="_1NJjZd">
+									<span>We do not share your personal details with anyone.</span>
+								</p>
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form id="signup2">
+
+
+
+										<!-- belongs to utkarsh-->
+<div>
+											<span>Enter Name</span>
+											<div class="_39M2dM">
+												<input type="text" autocomplete="off" class="_2zrpKA"
+													id="name1"> <span class="s-YM1W"></span> <label
+													class="b5konl"></label>
+											</div>
+										</div>
+										<!-- added id 'mob2' here -->
+										<div class="_39M2dM">
+											<input type="email" readonly="" autocomplete="off"
+												class="_2zrpKA" id="email2"> <span
+												class="s-YM1W _2rqcw-"></span> <label class="b5konl _2rqcw-"><span>Email Id</span></label><span class="ZAtlA-" id="amit1"></span> 
+											<!-- added class 'signUpb1' here, and removed hyperlink 'href="https://www.flipkart.com/#"' -->
+											<a class="_21JmK0 _1__46T signUpb1" tabindex="-1"><span>Change?</span></a>
+										</div>
+
+										<!-- addded pass here -->
+										<div>
+										<span>Set Password</span>
+											<div class="_39M2dM">
+												<input type="password" autocomplete="off" class="_2zrpKA"
+													id="pass" > <span
+													class="s-YM1W"></span> 
+											</div>
+										</div>
+
+										<!-- addded dob here -->
+										<div>
+											<span>Enter Address</span>
+											<div class="_39M2dM">
+												<input type="text" autocomplete="off" class="_2zrpKA"
+													id="addr"> <span class="s-YM1W"></span> <label
+													class="b5konl"></label>
+											</div>
+										</div>
+
+									</form>
+
+									<div class="_1avdGP">
+										<button id="registerButton" class="_2AkmmA _1LctnI _7UHT_c">
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+											<span> <!-- UTKARSHUTKARSHUTKARSHUTKARSHUTKARSH -->
+												Register
+											</span>
+											<!-- added class 'logInb1' here -->
+											<!-- changed from button to link, similar to that in 'signUpModal1' -->
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+										</button>
+										<a class="_2AkmmA _1LctnI jUwFiZ logInb1"> <span>
+												Existing User? Log in </span>
+										</a>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	<div class="zi6sUf" id="beforelogin">
+		<div class="_3zdbog _3Ed3Ub">
+			<ul class="_114Zhd">
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">Home</span>
+				</li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"></span>
+				</li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">
+						<a href="addbook.html"></a>
+				</span></li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">
+				</span></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+
+	<div class="zi6sUf" id="afterlogin">
+		<div class="_3zdbog _3Ed3Ub">
+			<ul class="_114Zhd">
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="index.html">Home</a></span>
+				</li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">
+						<a href="mybooks.html">My Books</a>
+				</span></li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">
+						<a href="requested.html">Book Requested</a>
+				</span></li>
+				<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a
+						href="myrequested.html">Book Requested By Me</a></span></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+				<li class="Wbt_B2 _1YVU3_"></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-sm-14" id="listingDisplay"
+		style="margin: 0px 0px 0px 0px; background-color: white">
+		<hr />
+		<div align="center">
+			<font color="Blue">Books In Database</font>
+		</div>
+		<hr />
+		<div class="row" style="text-align: center">
+			<div id="listing"></div>
+
+		</div>
+	</div>
+</body>
+<script>
+$(document).ready(function(){
+		loadListings();
+})	
+var ctxPath = "http://localhost:"+location.port+"/thebooklender"
+	
+	function loadListings(){
+	var name=localStorage.getItem("name"); 
+	$("#prashant").text("Hi "+name);
+	console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+	$('#listing').empty();
+	        $.ajax(
+	        		{
+	        			type : 'GET',
+	        			contentType : 'application/json',
+	        			url : ctxPath + "/api/books/allbooks",
+	        			async : false,
+	        			dataType : "json", // data type of response
+	        			success : function(result){
+	        				console.log("yaha print hoga"+result);
+	        				for (var i in result){
+	        					displayListings(result[i]);
+	        				}
+	            
+	        	    	},
+	        	    	error:function(){
+	        	    		alert("error occurred");
+	        	        	
+	        	    	}
+	        		});
+	}
+
+	function displayListings(result){
+		console.log("yaha tak agaya");
+		var data="&nbsp;&nbsp;";
+		
+		if(result.image != ""){
+			data += "<div class='col-sm-4, box round3'>" + 
+				"<a href='item.html?bookId=" + result.id +"'>" + 
+					"<div><div class='image'>" + 
+						"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
+						"src='" + result.image+"' alt=''>" +
+					"</div></div>"+
+			        "<div style = 'font-size:16px; text-align:centre'>" + result.title + "</div>"+
+			        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
+			        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
+		       
+		data += "</div>";		
+		}
+		else{
+			var image="https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg";
+			data += "<div class='col-sm-4, box round3'>" + 
+			"<a href='item.html?bookId=" + result.id +"'>" + 
+				"<div><div class='image'>" + 
+					"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
+					"src='" +image+"' alt=''>" +
+				"</div></div>"+
+		        "<div style = 'font-size:16px; text-align:centre'>" + result.title + "</div>"+
+		        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
+		        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
+	       
+	data += "</div>";	
+		}
+		$('#listing').append(data);
+
+	}
+
+    
+    function logout(){
+    	localStorage.clear();
+    }
+
+		
+	</script>
+<!-- <div style="margin:352px;"></div> -->
+<footer id="footer" class="footer color-bg">
+
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">Contact Us</h4>
+                    </div><!-- /.module-heading -->
+
+                    <div class="module-body">
+        <ul class="toggle-footer" style="">
+            <li class="media">
+                <div class="pull-left">
+                     <span class="icon fa-stack fa-lg">
+                            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <p>IIITB M-Tech 1st Year Project</p>
+                </div>
+            </li>
+              <li class="media">
+                <div class="pull-left">
+                     <span class="icon fa-stack fa-lg">
+                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <span><a href="#">thebooklender2019@outlook.com</a></span>
+                </div>
+            </li>
+              
+            </ul>
+    </div><!-- /.module-body -->
+                </div><!-- /.col -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================= FOOTER : END============================================================= -->
+
+	<!-- JavaScripts placed at the end of the document so the pages load faster -->
+</html>

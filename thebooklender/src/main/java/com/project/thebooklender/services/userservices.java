@@ -15,7 +15,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.project.thebooklender.dao.*;
-
 import com.project.thebooklender.bean.*;
 
 @Path("/users")
@@ -59,9 +58,56 @@ public class userservices {
 			user.setPassword(user.getPassword());
 			user.setAddress(user.getAddress());
 		
-		userdao dao = new userdao();
-		dao.updateUser(user);
+			userdao dao = new userdao();
+		    dao.updateUser(user);
 		
 		return Response.ok().build();
 		}
-	} 
+	
+	@POST
+	@Path("/email")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public User getUserbyEmail(User user) {
+		System.out.print("c "+user.getPassword());
+		userdao dao = new userdao();
+		User user_details = dao.getUserByEmail(user);
+		System.out.println("getUserbyEmail(): user: " + user);
+		System.out.println("getUserbyEmail(): user_details: " + user_details);
+		if (user_details == null)
+		{
+		  User newUser = new User();
+		  newUser.setUser_email(null);
+		  return null;
+		}
+		System.out.print("c "+user.getPassword());
+		System.out.print("d "+user_details.getPassword());
+		if (!(user.getPassword()).equals(user_details.getPassword()))
+			return null;
+		else
+			return user_details;
+	}
+	
+	@GET
+	@Path("/{id}")
+	@Consumes("application/json")
+	@Produces("application/json")
+	public User getUserbyId(@PathParam("id") int id) {
+		userdao dao = new userdao();
+		User user_details = dao.getUserById(id);
+		return user_details;
+	}
+	
+	@POST
+	@Path("validate")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.TEXT_PLAIN)
+	public boolean validate(String email) {
+		userdao dao = new userdao();
+		System.out.println(email);
+		boolean b=dao.validateUsername(email); 
+		System.out.println("validate");
+		return b;
+	}
+} 
+

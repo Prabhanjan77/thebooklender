@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html>
+<!-- replace all 'row'->'wor' & 'col'->'loc' to avoid classes conflict with bootstrap -->
+<head>
+<link title="Search Range" rel="icon" type="image/gif/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLplBpU6vn5cBgK8V_mMq476YQXMBdsFIzK83txzcL0JwXDmPd">
+<title>Home</title>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/register.js"></script>
+<script src="js/login.js"></script>
+ <script src="js/jquery-ui.js"></script>
+<script src="js/bootstrap-hover-dropdown.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/dropdown.css">
+
+<link rel="stylesheet" type="text/css" href="./css/cr.css">
+<link rel="stylesheet" type="text/css" href="./css/jquery-ui.css">
+
+
+
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/blue.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/owl.transitions.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/rateit.css">
+<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- slider CSS -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<!-- Customizable CSS -->
+<link rel="stylesheet" href="./bootstrapFiles/css/rateit.css">
+
+<!-- Icons/Glyphs -->
+<link rel="stylesheet" href="./bootstrapFiles/css/font-awesome.css">
+<link rel="stylesheet" href="./bootstrapFiles/fontawesome-all.css">
+<script src="js/bootstrap.min.js"></script>
+
+<style>
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+select, input[type=text], input[type=password] {
+	color: Black;
+	
+}
+
+
+.round3 {
+  border: 1px solid white;
+  border-radius: 20px;
+  text-align: center;
+  margin-left:20px;
+  
+}
+.box {
+  transition: box-shadow .3s;
+  width: 250px;
+  height: 350px;
+  background: #fff;
+  float: left;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+.img{
+	border-radius: 50%;
+	border: 1px solid Black;
+}
+::placeholder {
+  color: black;
+  opacity: 50; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: black;
+}
+
+#carosel {
+	width: 100%;
+	max-height: 500px;
+}
+
+.carousel-inner {
+	width: 100%;
+	max-height: 500px !important;
+}
+
+.carousel-inner  .item  img {
+	width: 50%;
+	height: 200px;
+}
+
+.container {
+	width: 100%;
+}
+</style>
+
+
+
+</head>
+<body >
+	<header class="CGBNf7">
+		<div class="_1tz-RS">
+			<div class="AsXM8z">
+				<div class="_2OJxl5">
+					<a href="index.html"><img width="180"
+						src="img/cooltext319580814447697.png" alt="Booklender" title="Booklender"
+						class="jnSYHL"></a> 
+				</div>
+				<div class="_1NLCcM">
+					<form class="_1WMLwI header-form-search" action="#" method="GET">
+						<div class="wor">
+							<div class="loc-11-12 ">
+								<div class="O8ZS_U">
+									<input type="text" value="" class="LM6RPg"
+										autocomplete="off"
+										placeholder="Search for books" id="search-bar">
+								</div>
+							</div>
+							<div class="loc-1-12">
+								<a class="vh79eN" type="submit" id="search-button">
+									<svg width="20" height="20" viewBox="0 0 17 18" class=""
+										xmlns="http://www.w3.org/2000/svg">
+										<g fill="#2874F1" fill-rule="evenodd">
+											<path class="_2BhAHa"
+											d="m11.618 9.897l4.225 4.212c.092.092.101.232.02.313l-1.465 1.46c-.081.081-.221.072-.314-.02l-4.216-4.203"></path>
+											<path class="_2BhAHa"
+											d="m6.486 10.901c-2.42 0-4.381-1.956-4.381-4.368 0-2.413 1.961-4.369 4.381-4.369 2.42 0 4.381 1.956 4.381 4.369 0 2.413-1.961 4.368-4.381 4.368m0-10.835c-3.582 0-6.486 2.895-6.486 6.467 0 3.572 2.904 6.467 6.486 6.467 3.582 0 6.486-2.895 6.486-6.467 0-3.572-2.904-6.467-6.486-6.467"></path>
+										</g>
+									</svg>
+								</a>
+							</div>
+							<input type="hidden" name="item.html?bookId=" value="search"> 
+						</div>
+					</form>
+				</div>
+				&nbsp;
+				<div class="_1Wr4v5">
+					<div class="dropdown" id="registered">
+						<div class="JvUE0p">
+							<a href="#"
+								style="font-size: 16px; letter-spacing: 0.1px; font-weight: 600; color: white;"
+								id="menu1" data-hover="dropdown" class="dropdown-toggle"
+								data-toggle="dropdown"><span id="prashant"></span><span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;">
+									<a href="myprofile.html"><i style="color: #157ed2"
+										class="fa fa-user"></i>&nbsp;&nbsp; My profile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+								</li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;"><a
+									href=notification.html> <i style="color: #157ed2"
+										class="fas fa-bell" ></i>&nbsp;&nbsp; Notification&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; height:140%; width: 100%;"><a
+									href="addbook.html"> <i style="color: #157ed2"
+										class="fas fa-book"></i>&nbsp;&nbsp; Add Book&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+								<li role="presentation" class="divider"></li>
+								<li role="presentation"
+									style="display: flex; align-items: center; width: 100%;"><a
+									href="index.html" onclick="logout()"> <i style="color: #157ed2"
+										class="fas fa-sign-out-alt"></i>&nbsp;&nbsp; Logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</a></li>
+							</ul>
+						</div>
+
+					</div>
+					</div>
+					
+					
+					
+					
+				
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="anirudh">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="unregistered">Login &amp; Register</div>
+					</div>
+
+				</div>
+				
+
+				
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai1">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="unregistered">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="anirudh">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai1">Login &amp; Register</div>
+					</div>
+
+				</div>
+				<div class="_1Wr4v5">
+					<div class="JvUE0p" style="display: none;">
+						<!-- added class 'logInb1' here -->
+						<div class="_2f5Jjv logInb1 username" data-toggle="modal"
+							data-target="#modal" id="bhai2">Login &amp; Register</div>
+					</div>
+
+				</div>
+				
+			</div>
+			
+		</div>
+	</header>
+
+	<!-- Body -->
+	<!-- model for login page -->
+	<!-- added modal here -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<!-- set width and height here -->
+			<div class="modal-content" style="padding: 0">
+				<div class="modal-body" style="padding: 0">
+					<div id="loginModal" class="uMF2cc" style="display: none;">
+						<div class="_1XBjg- wor _3Nz-h3">
+							<div class="Og_iib loc loc-2-5 _2Bol6j">
+								<span class="_1hgiYz"><span>Login</span></span>
+								<p class="_1NJjZd">
+									<span>Request and Lend the Book Made Easier</span>
+								</p>
+								<!-- <img src="./img/bok.jpg" width="60%"></img> -->
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form id="loginForm" autocomplete="off">
+										<div class="_39M2dM">
+											<input type="text" name="user_email" autocomplete="off"
+												autofocus="" class="_2zrpKA" value="" id="user_email"
+												placeholder="Enter Email Id"> <span
+												class="s-YM1W"></span>
+											<!--<label class="b5konl"><span>Enter Email/Mobile number</span></label>-->
+											<!--label-->
+											<span class="ZAtlA-" id="amit2"></span>
+											<!--warning incorrect login-->
+										</div>
+
+										<!--					<span class="ZAtlA-"><span>Your username or password is incorrect</span></span> -->
+
+										<div class="_39M2dM">
+											<input type="password" name="password" autocomplete="off"
+												class="_2zrpKA _3v41xv" value="" id="pas"
+												placeholder="Enter Password"> <span class="s-YM1W"></span>
+											<!--	<label class="b5konl"><span>Enter Password</span></label>-->
+											<a class="_21JmK0 _1__46T" tabindex="-1"><span>Forgot?</span></a>
+										</div>
+
+										<div class="_1avdGP">
+											<button id="loginButton" class="_2AkmmA _1LctnI _7UHT_c">
+												<div class="_2VTdOs _1_qmw3">
+													<svg class="_2zN0mv" viewBox="25 25 50 50">
+														<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+															r="20" fill="none" stroke-width="5"
+															stroke-miterlimit="10"></circle>
+													</svg>
+												</div>
+												<span>Login</span>
+												<!-- changed id 'signUpb1' to class -->
+											</button>
+										</div>
+										<a class="_2AkmmA _1LctnI jUwFiZ signUpb1"><span>New
+												to Booklender? Register</span></a>
+										<div class="_2Q8OlA">
+											<div class="S5kkau">
+												<span>We no longer support login via Social accounts.
+													To recover your old accounts please </span>
+												<div class="_20yN1P">
+													<span class="_2ykT1U">click here</span>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--first signup page that appears on clicking " new to flipkart? sign up "-->
+					<div id="signUpModal1" class="_32LSmx" style="display: none;">
+						<div class=" _1XBjg- wor">
+							<div class="Og_iib loc loc-2-5">
+								<span class="_1hgiYz"><span>Register</span></span>
+								<p class="_1NJjZd">
+									<span>We do not share your personal details with anyone.</span>
+								</p>
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form>
+										<!-- added id 'mob1' here -->
+										<div class="_39M2dM">
+											<input type="email" maxlength="100" autocomplete="off"
+												class="_2zrpKA" value="" id="email1"
+												placeholder="Enter Email Id"> <span
+												class="s-YM1W"></span><label class="b5konl"> <!--<span>Enter Mobile number</span>-->
+											</label> <span class="ZAtlA-" id="amit3"></span>
+
+										</div>
+									</form>
+									<!-- added id 'continue' here -->
+									<div class="_1avdGP">
+										<button class="_2AkmmA _1LctnI _7UHT_c" id="continue">
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+											<span>CONTINUE</span>
+											<!-- added class 'logInb1' here, and removed hyperlink href="https://www.flipkart.com/account/login?ret=/" -->
+										</button>
+										<a class="_2AkmmA _1LctnI jUwFiZ logInb1"><span>Existing
+												User? Log in</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--second signup page that appears on clicking " continue "-->
+					<div id="signUpModal2" class="_32LSmx" style="display: none;">
+						<div class="_1XBjg- wor">
+							<div class="Og_iib loc loc-2-5">
+								<span class="_1hgiYz"><span>Register</span></span>
+								<p class="_1NJjZd">
+									<span>We do not share your personal details with anyone.</span>
+								</p>
+							</div>
+							<div class="Km0IJL loc loc-3-5">
+								<div>
+									<form id="signup2">
+
+
+
+										<!-- belongs to utkarsh-->
+<div>
+											<span>Enter Name</span>
+											<div class="_39M2dM">
+												<input type="text" autocomplete="off" class="_2zrpKA"
+													id="name1"> <span class="s-YM1W"></span> <label
+													class="b5konl"></label>
+											</div>
+										</div>
+										<!-- added id 'mob2' here -->
+										<div class="_39M2dM">
+											<input type="email" readonly="" autocomplete="off"
+												class="_2zrpKA" id="email2"> <span
+												class="s-YM1W _2rqcw-"></span> <label class="b5konl _2rqcw-"><span>Email Id</span></label><span class="ZAtlA-" id="amit1"></span> 
+											<!-- added class 'signUpb1' here, and removed hyperlink 'href="https://www.flipkart.com/#"' -->
+											<a class="_21JmK0 _1__46T signUpb1" tabindex="-1"><span>Change?</span></a>
+										</div>
+
+										<!-- addded pass here -->
+										<div>
+										<span>Set Password</span>
+											<div class="_39M2dM">
+												<input type="password" autocomplete="off" class="_2zrpKA"
+													id="pass" > <span
+													class="s-YM1W"></span> 
+											</div>
+										</div>
+
+										<!-- addded dob here -->
+										<div>
+											<span>Enter Address</span>
+											<div class="_39M2dM">
+												<input type="text" autocomplete="off" class="_2zrpKA"
+													id="addr"> <span class="s-YM1W"></span> <label
+													class="b5konl"></label>
+											</div>
+										</div>
+
+									</form>
+
+									<div class="_1avdGP">
+										<button id="registerButton" class="_2AkmmA _1LctnI _7UHT_c">
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+											<span> <!-- UTKARSHUTKARSHUTKARSHUTKARSHUTKARSH -->
+												Register
+											</span>
+											<!-- added class 'logInb1' here -->
+											<!-- changed from button to link, similar to that in 'signUpModal1' -->
+											<div class="_2VTdOs _1_qmw3">
+												<svg class="_2zN0mv" viewBox="25 25 50 50">
+													<circle stroke="#fff" class="_1VgS7d" cx="50" cy="50"
+														r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+												</svg>
+											</div>
+										</button>
+										<a class="_2AkmmA _1LctnI jUwFiZ logInb1"> <span>
+												Existing User? Log in </span>
+										</a>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+<div class="zi6sUf" id="beforelogin">
+	<div class="_3zdbog _3Ed3Ub">
+	<ul class="_114Zhd">
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8">Home</span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="allbooks.html">All Books</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="bookbycat.html">Search By Category</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"> </span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	</ul >
+	</div>
+</div>		
+		
+		
+		
+		
+<div class="zi6sUf" id="afterlogin">
+	<div class="_3zdbog _3Ed3Ub">
+	<ul class="_114Zhd">
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="index.html">Home</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"> <a href="mybooks.html">My Books</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"> <a href="requested.html">Book Requested</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="myrequested.html">Book Requested By Me</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"><span class="_1QZ6fC _3Lgyp8"><a href="allbooks.html">All Books</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> <span class="_1QZ6fC _3Lgyp8"><a href="bookbycat.html">Search By Category</a></span>
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	<li class="Wbt_B2 _1YVU3_"> 
+	</li>
+	</ul >
+	</div>
+</div>
+<div style="margin:4px;"></div>
+<div class="_1DGioG required-tracking fkhp">
+<div class="_1VV5Cf _1QHAXj">
+<div class="_1SFos- " style="transform: scaleX(0.81261);"></div></div>
+</div>
+<div class="w3-container">
+<div class="homebanner-holder">
+					<!-- ========================================== SECTION â HERO ========================================= -->
+
+					<div id="hero">
+						<div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+							<div class="item"
+								style="background-image: url(./images/cat-banner-3.jpg);">
+								<div class="container-fluid">
+									<div class="caption bg-color vertical-center text-left">
+										<div class="slider-header fadeInDown-1"><font color="white">So many books, so little time !</font></div>
+										<div class="slider-header fadeInDown-1" align="right"><font color="white" >By Frank Zappa</font></div>
+										<div class="excerpt fadeInDown-2 hidden-xs">
+											<span></span>
+										</div>
+										<div class="button-holder fadeInDown-3">
+											<a href="requested.html"
+												class="btn-lg btn btn-uppercase btn-primary shop-now-button">Request Book</a>
+										</div>
+									</div>
+									<!-- /.caption -->
+								</div>
+								<!-- /.container-fluid -->
+							</div>
+							<!-- /.item -->
+
+							<div class="item"
+								style="background-image: url(./images/cat-banner-5.jpg);">
+								<div class="container-fluid">
+									<div class="caption bg-color vertical-center text-left">
+										<div class="slider-header fadeInDown-1"><font color="white">There is no friend as loyal as a book.</font> </div>
+										<div class="slider-header fadeInDown-1" align="right"><font color="white" >By Ernest Hemingway</font></div>
+										
+										<div class="excerpt fadeInDown-2 hidden-xs">
+											<span></span>
+										</div>
+										<div class="button-holder fadeInDown-3">
+											<a href="addbook.html"
+												class="btn-lg btn btn-uppercase btn-primary shop-now-button">Add Book</a>
+										</div>
+									</div>
+									<!-- /.caption -->
+								</div>
+								<!-- /.container-fluid -->
+							</div>
+							<!-- /.item -->
+
+						</div>
+						<!-- /.owl-carousel -->
+					</div>
+	
+	
+	</div>
+
+<!-- /.breadcrumb -->
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="body-content outer-top-xs">
+  <div class='container'>
+    <div class='col-md-12 round3'> 
+        <div >
+          <div class="row">
+            <div class="col-md-12">
+            <div class="product-price"><span class="price">Recent Book In Algorithms</span></div>
+            <br/>
+               <div id="grid-container"></div>
+              /.filter-tabs 
+            </div>
+            /.col
+            
+            /.col
+            <div class="col col-sm-6 col-md-4 text-right">
+              <div class="pagination-container">
+                <ul class="list-inline list-unstyled">
+                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+                /.list-inline 
+              </div>
+              /.pagination-container </div>
+            /.col 
+          </div>
+          /.row 
+        </div>    
+      </div>
+      /.col 
+    </div>
+    </div>
+    <hr/>
+    <div class="body-content outer-top-xs">
+  <div class='container'>
+    <div class='col-md-12 round3'> 
+        <div >
+          <div class="row">
+            <div class="col-md-12">
+            <div class="product-price"><span class="price">Recent Book In Maths</span></div>
+            <br/>
+               <div id="grid-container1"></div>
+              /.filter-tabs 
+            </div>
+            /.col
+            
+            /.col
+            <div class="col col-sm-6 col-md-4 text-right">
+              <div class="pagination-container">
+                <ul class="list-inline list-unstyled">
+                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+                /.list-inline 
+              </div>
+              /.pagination-container </div>
+            /.col 
+          </div>
+          /.row 
+        </div>
+        
+         
+        
+      </div>
+      /.col 
+    </div>
+    </div>
+    <br/>
+    /.row 
+    </div> -->
+   
+   	<div id="product-tabs-slider"
+						class="scroll-tabs outer-top-vs wow fadeInUp round3">
+						<div class="more-info-tab clearfix ">
+							<h3 class="new-product-title pull-left">Books In Algorithms </h3>
+							<ul class="nav nav-tabs nav-tab-line pull-right"
+								id="new-products-categories">
+								<li class="active"><a data-transition-type="backSlide"
+									href="#all" onclick="newProductsAll()" data-toggle="tab"></a></li>
+							</ul>
+							<!-- /.nav-tabs -->
+						</div>
+						<div class="tab-content outer-top-xs">
+							<div class="tab-pane in active" id="all">
+								<div class="product-slider">
+									<div id="new-products-all"
+										class="owl-carousel home-owl-carousel custom-carousel owl-theme"
+										data-item="4">
+
+										<div id="prod0" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg0" href="#"><img id="productImage0"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName0" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice0"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice0"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice0"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod1" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg1" href="#"><img id="productImage1" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName1" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice1"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice1"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice1"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod2" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg2" href="#"><img id="productImage2" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName2" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice2"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice2"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice2"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod3" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg3" href="#"><img id="productImage3" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName3" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice3"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice3"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice3"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+										<!-- /.item -->
+
+										<div id="prod4" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg4" href="#"><img id="productImage4" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName4" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice4"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice4"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice4"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+										
+
+										<div id="prod6" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg6" href="#"><img id="productImage6" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName6" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice6"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice6"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice6"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod5" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg5" href="#"><img id="productImage5" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName5" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice5"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice5"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice5"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+									</div>
+									<!-- /.home-owl-carousel -->
+								</div>
+								<!-- /.product-slider -->
+							</div>
+							<!-- /.tab-pane -->
+
+						</div>
+						<!-- /.tab-content -->
+					</div>
+					<!-- /.scroll-tabs -->
+   
+   
+   
+   <div id="product-tabs-slider"
+						class="scroll-tabs outer-top-vs wow fadeInUp round3">
+						<div class="more-info-tab clearfix ">
+							<h3 class="new-product-title pull-left">Books In Database </h3>
+							<ul class="nav nav-tabs nav-tab-line pull-right"
+								id="new-products-categories">
+								<li class="active"><a data-transition-type="backSlide"
+									href="#all" onclick="newProductsAll()" data-toggle="tab">All</a></li>
+							</ul>
+							<!-- /.nav-tabs -->
+						</div>
+						<div class="tab-content outer-top-xs">
+							<div class="tab-pane in active" id="all">
+								<div class="product-slider">
+									<div id="new-products-all"
+										class="owl-carousel home-owl-carousel custom-carousel owl-theme"
+										data-item="4">
+
+										<div id="prod10" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg10" href="#"><img id="productImage10"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName10" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice10"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice10"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice10"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod11" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg11" href="#"><img id="productImage11" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName11" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice11"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice11"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice11"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod12" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg12" href="#"><img id="productImage12" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName12" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice12"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice2"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice2"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod13" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg13" href="#"><img id="productImage13" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName13" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice13"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice13"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice13"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod14" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg14" href="#"><img id="productImage14" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName14" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice14"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice14"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice14"></span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+										
+
+										<div id="prod16" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg16" href="#"><img id="productImage16" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName16" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice16"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice16"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice16"></span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod15" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg15" href="#"><img id="productImage15" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName15" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice15"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice15"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice15"></span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+									</div>
+									<!-- /.home-owl-carousel -->
+								</div>
+								<!-- /.product-slider -->
+							</div>
+							<!-- /.tab-pane -->
+
+						</div>
+						<!-- /.tab-content -->
+					</div>
+   
+   
+   
+   
+   
+   	<div id="product-tabs-slider"
+						class="scroll-tabs outer-top-vs wow fadeInUp round3">
+						<div class="more-info-tab clearfix ">
+							<h3 class="new-product-title pull-left">All The Books </h3>
+							<ul class="nav nav-tabs nav-tab-line pull-right"
+								id="new-products-categories">
+								<li><a 
+									 href="allbooks.html">All Books</a></li>
+							</ul>
+							<!-- /.nav-tabs -->
+						</div>
+						<div class="tab-content outer-top-xs">
+							<div class="tab-pane in active" id="all">
+								<div class="product-slider">
+									<div id="new-products-all"
+										class="owl-carousel home-owl-carousel custom-carousel owl-theme"
+										data-item="4">
+
+										<div id="prod80" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg80" href="#"><img id="productImage80"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName80" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice80"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice80"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice80"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod81" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg81" href="#"><img id="productImage81" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName81" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice81"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice81"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice81"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod82" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg82" href="#"><img id="productImage82" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+														<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName82" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice82"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice82"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice82"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+												
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod83" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg83" href="#"><img id="productImage83" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName83" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice83"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice83"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice83"></span>
+															</span>
+															<br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod84" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg84" href="#"><img id="productImage84" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName84" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice84"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice84"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice8"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+										
+
+										<div id="prod86" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg86" href="#"><img id="productImage86" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName86" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice86"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice86"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice86"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										<!-- /.item -->
+
+										<div id="prod85" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg85" href="#"><img id="productImage85" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName85" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice85"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice85"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice85"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										
+										<div id="prod87" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg87" href="#"><img id="productImage87" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName87" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice87"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice87"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice87"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										
+										<div id="prod88" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg88" href="#"><img id="productImage88" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName88" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice88"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice88"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice88"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										
+										<div id="prod88" class="item item-carousel box" hidden="hidden">
+											<div class="products">
+												<div class="product">
+													<div class="product-image">
+														<div class="image">
+															<a id="productImg88" href="#"><img id="productImage88" height="250px"></a>
+														</div>
+														<!-- /.image -->
+													</div>
+													<!-- /.product-image -->
+													<div class="product-info text-center">
+														<h3 class="name">
+															<a id="productName88" href="#"></a>
+														</h3>
+														
+														<div class="discount"></div>
+														<div class="description"></div>
+														<div class="product-price">
+															<span class="price"><b>Category : </b> &nbsp;
+															<span id="discPrice88"></span>
+															
+															</span> <br/>
+
+															<!-- <div style='text-decoration:line-through'> -->
+																<span class="price"><b>Isbn :</b>&nbsp;
+																<span id="newdiscPrice88"></span></span> &nbsp;
+																<span class="price"><b></b>
+																<span  id="actualPrice88"></span>
+															</span>
+															</span><br/>
+															
+														</div>
+														<!-- /.product-price -->
+
+													</div>
+													<!-- /.product-info -->
+														<!-- /.action -->
+													</div>
+													<!-- /.cart -->
+												</div>
+												<!-- /.product -->
+
+											</div>
+											<!-- /.products -->
+										</div>
+										
+										
+										
+										
+										
+										<!-- /.item -->
+									</div>
+									<!-- /.home-owl-carousel -->
+								</div>
+								<!-- /.product-slider -->
+							</div>
+							<!-- /.tab-pane -->
+
+						</div>
+						<!-- /.tab-content -->
+					</div>
+   
+   
+   
+   </div>
+</body>
+<script src="js/ani.js"></script>
+<script type="text/javascript">
+	var selectedId;
+	var items = [];
+	var suggestionItems = [];
+	var ani = [];
+	
+	$.ajax({
+		type : 'GET',
+		url : "http://localhost:" + location.port + "/thebooklender/api/books/allbooks",
+		dataType : "json",
+		async: false,
+		success : function(itemList) {
+			/*  console.log("gvhgvjhvjhvhjv "+itemList); 
+ */			ItemAutoComplete(itemList);
+			},
+		error : function(err) {
+			alert(err.status);
+			}
+		});
+		
+	function ItemAutoComplete(itemList){
+		 /* console.log("gvhgvjhvjhvhjv "+itemList); */
+		var itemSearch = [];
+		for(var x in itemList){
+			var temp = {};
+			temp['id'] = itemList[x].id;
+			temp['value'] = itemList[x].title;
+			itemSearch.push(temp);
+			ani.push(temp);
+			items.push(itemList[x].title);
+			//console.log("ani print ="+ani[x].value);
+ 		}
+		$( "#search-bar" ).autocomplete({
+			  source: itemSearch,
+			  response: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  },
+			  select: function(event, ui){
+				  suggestionItems = ui.content;
+				  console.log("===========================");
+				  for(var it in suggestionItems){
+					  console.log(suggestionItems[it]);
+				  }
+			  }
+			});
+	}
+	
+	$("#search-button").click(function(){
+		console.log("search items ="+ani[0].value);
+		var searchVal = $("#search-bar").val();
+		console.log(searchVal);
+		for (var i in ani){
+			if(ani[i].value.includes(searchVal)){
+				searchVal=ani[i].id;
+			}
+		}
+		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		
+		/* if(items.includes(selectedItem)==true)
+			window.location.href = "item.jsp?id="+selectedId;
+		else
+			swal("", "No such item found", "error"); */
+	})
+	
+	</script>
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+</script>
+
+
+
+<script>
+$(document).ready(function() {
+	var name=localStorage.getItem("user_name"); 
+	$("#prashant").text("Hi "+name);
+	newProductsAll();
+	newProductsAll1();
+	newProductsAll2();
+	
+});
+/* 	var ctxPath = "http://localhost:" + location.port + "/thebooklender/api/carosel/getAllItemsForACategory/'Algorithm'";
+	//console.log(ctxPath);
+	$.ajax({
+		type : 'GET',
+		contentType : 'application/json',
+		url : ctxPath ,
+		dataType : "json", // data type of response
+		success : populate,
+		error : function() {
+	    	 window.location.href = "/thebooklender/";
+		}
+	});
+	ctxPath = "http://localhost:" + location.port + "/thebooklender/api/carosel/getAllItemsForACategory/'Database'";
+	$.ajax({
+		type : 'GET',
+		contentType : 'application/json',
+		url : ctxPath ,
+		dataType : "json", // data type of response
+		success : populate1,
+		error : function() {
+	    	 window.location.href = "/thebooklender/";
+		}
+	});
+				
+});
+
+function populate( data ) {
+	console.log(data);
+		var i = data.length;
+		var txt="";
+		var imgURL;
+		while( i-- > 0 )
+		{
+			console.log(data[i].description);
+			
+			if(data[i].description != ""){
+				console.log("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
+			//imgURL = "./img/item/clrs";
+			txt += ' <div class="col-sm-3 col-md-3 wow fadeInUp">' + '<div class="round3"><br/>' + '<div class="product">' + 
+					'<div class="product-image">' + ' <div class="image"> <a href="item.html?bookId=' + data[i].id + 
+					'"><img  class=" img" src="' + data[i].description + '" width="250" height="250" alt=""></a> ' + '<!-- /.image -->' +  '</div>' + '<!-- /.product-image -->' + 
+					'<div class="product-info text-left">' + '<h3 class="name"><a href="item.html?bookId='+ data[i].id +  
+					'"> &nbsp; &nbsp; <b> Book Title :&nbsp; &nbsp;</b>' + data[i].tittle + '</a></h3>' + '<div class="rating rateit-small"></div>' + '<div class="description"></div>' +
+					'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Category :&nbsp; &nbsp;' + data[i].category + '</span></div>'+'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Isbn :&nbsp; &nbsp;' + data[i].isbn + ' </span>  </div>' + '<!-- /.product-price --> ' + '</div>' + 
+					'<!-- /.product-info -->' + '<div class="cart clearfix animate-effect">' + '<div class="action">' + 
+					'<ul class="list-unstyled">' + '<li class="add-cart-button btn-group">' + 
+					'<button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>' +
+					'<button class="btn btn-primary cart-btn" type="button">Rent Now</button>' + '</li></ul> </div> <!-- /.action -->' + 
+					'</div><!-- /.cart --></div><!-- /.product --> </div><!-- /.products --> </div></div></div> &nbsp;<!-- /.item -->';
+			}
+			else{
+				console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+				//imgURL = "http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif";
+				txt +=' <div class="col-sm-3 col-md-3 wow fadeInUp">' + '<div class="round3"><br/>' + '<div class="product">' + 
+						'<div class="product-image">' + ' <div class="image"> <a href="item.html?bookId=' + data[i].id + 
+				'"><img  class=" img" src="https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg" width="250" height="250" alt=""></a> ' + '<!-- /.image -->' +  '</div>' + '<!-- /.product-image -->' + 
+				'<div class="product-info text-left">' + '<h3 class="name"><a href="item.html?bookId='+ data[i].id +  
+				'"> &nbsp; &nbsp; <b> Book Title :&nbsp; &nbsp;</b>' + data[i].tittle + '</a></h3>' + '<div class="rating rateit-small"></div>' + '<div class="description"></div>' +
+				'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Category :&nbsp; &nbsp;' + data[i].category + '</span></div>'+'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Isbn :&nbsp; &nbsp;' + data[i].isbn + ' </span>  </div>' + '<!-- /.product-price --> ' + '</div>' + 
+				'<!-- /.product-info -->' + '<div class="cart clearfix animate-effect">' + '<div class="action">' + 
+				'<ul class="list-unstyled">' + '<li class="add-cart-button btn-group">' + 
+				'<button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>' +
+				'<button class="btn btn-primary cart-btn" type="button">Rent Now</button>' + '</li></ul> </div> <!-- /.action -->' + 
+				'</div><!-- /.cart --></div><!-- /.product --> </div><!-- /.products --> </div></div></div> &nbsp;<!-- /.item -->';
+
+			}
+			}
+		//console.log("hello ="+txt);
+		//$("#grid-container").text(txt);
+		document.getElementById("grid-container").innerHTML = txt;
+		
+}
+
+function populate1( data ) {
+	console.log(data);
+	var name=localStorage.getItem("name"); 
+	$("#prashant").text("Hi "+name);
+		var i = data.length;
+		var txt="";
+		//var imgURL = "";
+		while( i-- > 0 )
+		{
+			//imgURL = "./img/item/clrs";
+			if(data[i].description != ""){
+				console.log("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
+			//imgURL = "./img/item/clrs";
+			txt += ' <div class="col-sm-3 col-md-3 wow fadeInUp">' + '<div class="round3"><br/>' + '<div class="product">' + 
+					'<div class="product-image">' + ' <div class="image"> <a href="item.html?bookId=' + data[i].id + 
+					'"><img  class=" img" src="' + data[i].description + '" width="250" height="250" alt=""></a> ' + '<!-- /.image -->' +  '</div>' + '<!-- /.product-image -->' + 
+					'<div class="product-info text-left">' + '<h3 class="name"><a href="item.html?bookId='+ data[i].id +  
+					'"> &nbsp; &nbsp; <b> Book Title :&nbsp; &nbsp;</b>' + data[i].tittle + '</a></h3>' + '<div class="rating rateit-small"></div>' + '<div class="description"></div>' +
+					'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Category :&nbsp; &nbsp;' + data[i].category + '</span></div>'+'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Isbn :&nbsp; &nbsp;' + data[i].isbn + ' </span>  </div>' + '<!-- /.product-price --> ' + '</div>' + 
+					'<!-- /.product-info -->' + '<div class="cart clearfix animate-effect">' + '<div class="action">' + 
+					'<ul class="list-unstyled">' + '<li class="add-cart-button btn-group">' + 
+					'<button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>' +
+					'<button class="btn btn-primary cart-btn" type="button">Rent Now</button>' + '</li></ul> </div> <!-- /.action -->' + 
+					'</div><!-- /.cart --></div><!-- /.product --> </div><!-- /.products --> </div></div></div> &nbsp;<!-- /.item -->';
+			}
+			else{
+				console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+				//imgURL = "http://www.51allout.co.uk/wp-content/uploads/2012/02/Image-not-found.gif";
+				txt +=' <div class="col-sm-3 col-md-3 wow fadeInUp">' + '<div class="round3"><br/>' + '<div class="product">' + 
+						'<div class="product-image">' + ' <div class="image"> <a href="item.html?bookId=' + data[i].id + 
+				'"><img  class=" img" src="https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg" width="250" height="250" alt=""></a> ' + '<!-- /.image -->' +  '</div>' + '<!-- /.product-image -->' + 
+				'<div class="product-info text-left">' + '<h3 class="name"><a href="item.html?bookId='+ data[i].id +  
+				'"> &nbsp; &nbsp; <b> Book Title :&nbsp; &nbsp;</b>' + data[i].tittle + '</a></h3>' + '<div class="rating rateit-small"></div>' + '<div class="description"></div>' +
+				'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Category :&nbsp; &nbsp;' + data[i].category + '</span></div>'+'<div class="product-price"> <span class="price"> &nbsp; &nbsp; Isbn :&nbsp; &nbsp;' + data[i].isbn + ' </span>  </div>' + '<!-- /.product-price --> ' + '</div>' + 
+				'<!-- /.product-info -->' + '<div class="cart clearfix animate-effect">' + '<div class="action">' + 
+				'<ul class="list-unstyled">' + '<li class="add-cart-button btn-group">' + 
+				'<button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>' +
+				'<button class="btn btn-primary cart-btn" type="button">Rent Now</button>' + '</li></ul> </div> <!-- /.action -->' + 
+				'</div><!-- /.cart --></div><!-- /.product --> </div><!-- /.products --> </div></div></div> &nbsp;<!-- /.item -->';
+
+			}
+
+		}
+		//console.log("hello ="+txt);
+		//$("#grid-container").text(txt);
+		document.getElementById("grid-container1").innerHTML = txt;
+		
+} */
+
+function logout(){
+	localStorage.clear();
+}
+
+
+
+
+function newProductsAll()
+{
+    var max_len = 7;
+    var urlmine="http://localhost:" + location.port + "/thebooklender/api/carousel/getBooksByCategory/'Algorithm'";
+	for(var i=0;i<max_len;i++)
+	{
+		$("#prod"+i).hide();
+	}
+	//console.log(ctxPath);
+	$.ajax(
+	{
+		type : 'GET',
+		contentType : 'application/json',
+		url : urlmine,
+		dataType : "json", // data type of response
+		success :
+			function(listings_json)
+			{
+			//console.log("isl" + listings_json[0].tittle);
+				for(var i=0;i<listings_json.length;i++) {
+					//console.log("anir"+i);
+					if(listings_json[i].image !=""){
+					$("#productImage"+i).attr("src",listings_json[i].image);}
+					else{
+						$("#productImage"+i).attr("src","https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg");
+					}
+					$("#productImg"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productName"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productImage"+i).attr("style",'display: block; object-fit: contain; width: 230px; height: 230px;');
+					$("#productName"+i).html(listings_json[i].title);
+//geoplugin_currencyConverter(listings_json[i].price,geoplugin_currencyCode())
+					$("#discPrice"+i).html(listings_json[i].category);
+// 					$("#discPrice"+i).append(" ("+listings_json[i].manufacture_Date+")");
+					$("#actualPrice"+i).html(listings_json[i].isbn);
+					$("#prod"+i).show();
+				}
+			},
+    	error:
+    		function(){}
+	});
+}
+
+function newProductsAll2()
+{
+	console.log("airhjjibjhbhjbjhbjhbvhjvb");
+    var max_len = 10;
+    var urlmine="http://localhost:" + location.port + "/thebooklender/api/books/allbooks";
+	for(var i=0;i<max_len;i++)
+	{
+		$("#prod8"+i).hide();
+	}
+	//console.log(ctxPath);
+	$.ajax(
+	{
+		type : 'GET',
+		contentType : 'application/json',
+		url : urlmine,
+		dataType : "json", // data type of response
+		success :
+			function(listings_json)
+			{
+			//console.log("isl" + listings_json[0].tittle);
+				for(var i=0;i<listings_json.length;i++) {
+				//	console.log("anir"+i);
+					if(listings_json[i].image !=""){
+					$("#productImage8"+i).attr("src",listings_json[i].image);}
+					else{
+						$("#productImage8"+i).attr("src","https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg");
+					}
+					$("#productImg8"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productName8"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productImage8"+i).attr("style",'display: block; object-fit: contain; width: 230px; height: 230px;');
+					$("#productName8"+i).html(listings_json[i].title);
+//geoplugin_currencyConverter(listings_json[i].price,geoplugin_currencyCode())
+					$("#discPrice8"+i).html(listings_json[i].category);
+// 					$("#discPrice"+i).append(" ("+listings_json[i].manufacture_Date+")");
+					$("#actualPrice8"+i).html(listings_json[i].isbn);
+					$("#prod8"+i).show();
+				}
+			},
+    	error:
+    		function(){}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function newProductsAll1()
+{
+    var max_len = 7;
+    var urlmine="http://localhost:" + location.port + "/thebooklender/api/carousel/getBooksByCategory/'Database'";
+	for(var i=0;i<max_len;i++)
+	{
+		$("#prod1"+i).hide();
+	}
+	//console.log(ctxPath);
+	$.ajax(
+	{
+		type : 'GET',
+		contentType : 'application/json',
+		url : urlmine,
+		dataType : "json", // data type of response
+		success :
+			function(listings_json)
+			{
+			//console.log("isl" + listings_json[0].tittle);
+				for(var i=0;i<listings_json.length;i++) {
+					//console.log("anir"+i);
+					if(listings_json[i].description !=""){
+					$("#productImage1"+i).attr("src",listings_json[i].image);}
+					else{
+						$("#productImage1"+i).attr("src","https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg");
+					}
+					$("#productImg1"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productName1"+i).attr("href","item.html?bookId="+listings_json[i].id);
+					$("#productImage1"+i).attr("style",'display: block; object-fit: contain; width: 230px; height: 230px;');
+					$("#productName1"+i).html(listings_json[i].title);
+//geoplugin_currencyConverter(listings_json[i].price,geoplugin_currencyCode())
+					$("#discPrice1"+i).html(listings_json[i].category);
+// 					$("#discPrice"+i).append(" ("+listings_json[i].manufacture_Date+")");
+					$("#actualPrice1"+i).html(listings_json[i].isbn);
+					$("#prod1"+i).show();
+				}
+			},
+    	error:
+    		function(){}
+	});
+}
+
+</script>
+
+<footer id="footer" class="footer color-bg">
+
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="module-heading">
+                        <h4 class="module-title">Contact Us</h4>
+                    </div><!-- /.module-heading -->
+
+                    <div class="module-body">
+        <ul class="toggle-footer" style="">
+            <li class="media">
+                <div class="pull-left">
+                     <span class="icon fa-stack fa-lg">
+                            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <p>IIITB M-Tech 1st Year Project</p>
+                </div>
+            </li>
+              <li class="media">
+                <div class="pull-left">
+                     <span class="icon fa-stack fa-lg">
+                      <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <span><a href="#">thebooklender2019@outlook.com</a></span>
+                </div>
+            </li>
+              
+            </ul>
+    </div><!-- /.module-body -->
+                </div><!-- /.col -->
+            </div>
+        </div>
+    </div>
+</footer>
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	
+	<script src="assets/js/bootstrap.min.js"></script>
+	
+	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	
+	<script src="assets/js/echo.min.js"></script>
+	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+	<script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/jquery.rateit.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	
+	 
+	 
+<!-- ============================================================= FOOTER : END============================================================= -->
+
+	<!-- JavaScripts placed at the end of the document so the pages load faster -->
+</html>
