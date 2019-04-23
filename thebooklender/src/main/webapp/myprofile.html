@@ -10,6 +10,8 @@
 <script src="js/login.js"></script>
  <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap-hover-dropdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/dropdown.css">
@@ -509,79 +511,79 @@ font{
 		style="margin: 0px 0px 0px 0px; background-color: white">
 		<hr />
 		<div align="center">
-			<font color="Blue">Books Added By Me</font>
+			<font color="Blue">My Profile</font>
 		</div>
 		<hr />
-		<div class="row" style="text-align: center">
-			<div id="listing"></div>
-		</div>
+        <div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <h3>Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">User name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" id="emailiduser" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" id="pwd">
+            </div>
+          </div>
+          <div class="form-group">
+          <label class="col-md-3 control-label">Show Password</label>
+          <div class="col-md-8">
+           <input type="checkbox" onclick="showfunction()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">RoomNo:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" id="roomno">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button class='btn btn-primary' onclick='return updateuserdetails()' type='button'>Save Changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
 	</div>
 </body>
 <script>
 $(document).ready(function(){
-		loadListings();
+/* 	var name=localStorage.getItem("user_name"); 
+	var pwd=localStorage.getItem("password"); 
+	var email=localStorage.getItem("user_email"); 
+	var address=localStorage.getItem("address"); 
+	console.log(name);
+	console.log(pwd);
+	console.log(email);
+	console.log(address);
+	document.getElementById('name').value = name;
+	document.getElementById('emailiduser').value = email;
+	document.getElementById('pwd').value = pwd;
+	document.getElementById('roomno').value = address; */
+	getuserdetails();
+	
 })	
-var ctxPath = "http://localhost:8082/thebooklender"
-	function loadListings(){
-	var name=localStorage.getItem("user_name"); 
-	var ownerId=localStorage.getItem("id"); 
-	$("#prashant").text("Hi "+name);
-	console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
-	$('#listing').empty();
-	        $.ajax(
-	        		{
-	        			type : 'GET',
-	        			contentType : 'application/json',
-	        			url : ctxPath + "/api/book/ownerItem/"+ownerId,
-	        			async : false,
-	        			dataType : "json", // data type of response
-	        			success : function(result){
-	        				for (var i in result){
-	        					displayListings(result[i]);
-	        				}
-	            
-	        	    	},
-	        	    	error:function(){
-	        	    		swal("error occurred");
-	        	        	
-	        	    	}
-	        		});
-	}
 
-	function displayListings(result){
-		console.log("yaha tak agaya");
-		var data="&nbsp;&nbsp;";
-		
-		if(result.image != ""){
-			data += "<div class='col-sm-4, box round3'>" + 
-				"<a href='item.html?bookId=" + result.id +"'>" + 
-					"<div><div class='image'>" + 
-						"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
-						"src='" + result.image+"' alt=''>" +
-					"</div></div>"+
-			        "<div style = 'font-size:16px; text-align:centre'>" + result.tittle + "</div>"+
-			        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
-			        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
-		       
-		data += "</div>";		
-		}
-		else{
-			var image="https://previews.123rf.com/images/themoderncanvas/themoderncanvas1603/themoderncanvas160300013/53245338-404-page-not-found-error-icon-internet-error-sign-laptop-browser-error-symbol-white-laptop-404-error.jpg";
-			data += "<div class='col-sm-4, box round3'>" + 
-			"<a href='item.html?bookId=" + result.id +"'>" + 
-				"<div><div class='image'>" + 
-					"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
-					"src='" +image+"' alt=''>" +
-				"</div></div>"+
-		        "<div style = 'font-size:16px; text-align:centre'>" + result.tittle + "</div>"+
-		        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
-		        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
-	       
-	data += "</div>";	
-		}
-		$('#listing').append(data);
-
-	}
     
 	function ItemAutoComplete(itemList){
 		 /* console.log("gvhgvjhvjhvhjv "+itemList); */
@@ -623,7 +625,7 @@ var ctxPath = "http://localhost:8082/thebooklender"
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;
@@ -634,7 +636,73 @@ var ctxPath = "http://localhost:8082/thebooklender"
     function logout(){
     	localStorage.clear();
     }
-
+    
+	function showfunction() {
+		  var x = document.getElementById("pwd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+		}
+	
+	function updateuserdetails(){
+		 var useruniqueid = localStorage.getItem("id");  
+		 console.log(useruniqueid);
+		 var name1 = document.getElementById("name").value;
+		 var pwd1 = document.getElementById("pwd").value;
+		 var address1 = document.getElementById("roomno").value;
+		 var URL="http://localhost:"+location.port+"/thebooklender/api/users/update?userid="+useruniqueid;
+	     console.log(URL);
+	    var userdata = JSON.stringify({
+			"user_name" : name1,
+			"password" : pwd1,
+			"address" : address1,
+		});
+			$.ajax({
+			type : 'PUT',
+			contentType : 'application/json',
+			url : URL,
+			async : false,
+			data : userdata,
+			success : function(data ) {
+				console.log(data);
+				swal({
+					  title: "Your Profile has been updated successfully",
+					  icon: "success",
+					});
+				location.reload();
+			},
+			error : function() {
+				alert("error occurred");
+			}
+		});
+		
+	}	
+	
+	function getuserdetails(){
+		 var useruniqueid = localStorage.getItem("id");  
+		 var URL="http://localhost:"+location.port+"/thebooklender/api/users/"+useruniqueid;
+	     console.log(URL);
+			$.ajax({
+			type : 'GET',
+			contentType : 'application/json',
+			url : URL,
+			dataType : "json",
+			async : false,
+			success : function(data ) {
+				console.log(data);
+				document.getElementById('name').value = data.user_name;
+				document.getElementById('emailiduser').value = data.user_email;
+				document.getElementById('pwd').value = data.password;
+				document.getElementById('roomno').value = data.address;
+			},
+			error : function() {
+				alert("error occurred");
+			}
+		});
+		
+	}	
 		
 	</script>
 	<script type="text/javascript">
@@ -697,7 +765,7 @@ var ctxPath = "http://localhost:8082/thebooklender"
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;

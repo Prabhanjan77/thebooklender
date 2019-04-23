@@ -98,6 +98,7 @@ public class userdao {
 				newuser.setUser_name(rs.getString("user_name"));
 				newuser.setUser_email(rs.getString("user_email"));
 				newuser.setPassword(rs.getString("password"));
+				newuser.setAddress(rs.getString("address"));
 				System.out.println(user.getId());
 				System.out.println(user.getUser_name());
 			}
@@ -141,6 +142,7 @@ public class userdao {
 				user.setUser_name(rs.getString("user_name"));
 				user.setUser_email(rs.getString("user_email"));
 				user.setPassword(rs.getString("password"));
+				user.setAddress(rs.getString("address"));
 				System.out.println(user.getId());
 				System.out.println(user.getUser_name());
 			}

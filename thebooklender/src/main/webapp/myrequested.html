@@ -10,6 +10,8 @@
 <script src="js/login.js"></script>
  <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap-hover-dropdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/dropdown.css">
@@ -702,7 +704,10 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender";
 			async : false,
 			success : function(data) {
 				console.log(data);
-				alert("You have submitted request to return book.")
+				swal({
+					  title: "You have submitted request to return book.",
+					  icon: "success",
+					});
 				checkbuttonexists(bookid);
 			},
 			error : function() {
@@ -800,7 +805,7 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender";
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;

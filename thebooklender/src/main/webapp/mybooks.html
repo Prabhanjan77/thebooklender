@@ -10,6 +10,8 @@
 <script src="js/login.js"></script>
  <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap-hover-dropdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/dropdown.css">
@@ -446,8 +448,6 @@ font{
 												Existing User? Log in </span>
 										</a>
 									</div>
-
-
 								</div>
 							</div>
 						</div>
@@ -513,9 +513,11 @@ font{
 			<font color="Blue">Books Added By Me</font>
 		</div>
 		<hr />
+        <div id="myDIV" align="center" style="display:none;font: 25px arial, sans-serif;">
+             You haven't added any books
+        </div>
 		<div class="row" style="text-align: center">
 			<div id="listing"></div>
-
 		</div>
 	</div>
 </body>
@@ -538,10 +540,15 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender"
 	        			async : false,
 	        			dataType : "json", // data type of response
 	        			success : function(result){
-	        				console.log("yaha print hoga"+result);
-	        				if(result==" ") alert("no books");
+	        				console.log("yaha print hoga"+result.length);
+	        				if(result.length === 0) 
+	        				{
+	        					$("#myDIV").show();
+	        				}
+	        				else{
 	        				for (var i in result){
 	        					displayListings(result[i]);
+	        				}
 	        				}
 	            
 	        	    	},
@@ -563,7 +570,7 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender"
 						"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
 						"src='" + result.image+"' alt=''>" +
 					"</div></div>"+
-			        "<div style = 'font-size:16px; text-align:centre'>" + result.tittle + "</div>"+
+			        "<div style = 'font-size:16px; text-align:centre'>" + result.title + "</div>"+
 			        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
 			        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
 		       
@@ -577,13 +584,15 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender"
 					"<img class='product-image' style='display: block; object-fit: contain; width: 215px; height: 215px;'" + 
 					"src='" +image+"' alt=''>" +
 				"</div></div>"+
-		        "<div style = 'font-size:16px; text-align:centre'>" + result.tittle + "</div>"+
+		        "<div style = 'font-size:16px; text-align:centre'>" + result.title + "</div>"+
 		        "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;" + result.isbn + "</div>"+
 		        "<div style = 'font-size:16px; text-align:centre'>Category:&nbsp;&nbsp;" + result.category + "</div>";
 	       
 	data += "</div>";	
 		}
 		$('#listing').append(data);
+        
+        	
 
 	}
     
@@ -653,7 +662,7 @@ var ctxPath = "http://localhost:"+location.port+"/thebooklender"
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;

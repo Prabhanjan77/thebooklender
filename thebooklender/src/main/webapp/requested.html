@@ -11,6 +11,8 @@
 <script src="js/login.js"></script>
  <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap-hover-dropdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/dropdown.css">
@@ -546,11 +548,14 @@ font {
 		style="margin: 0px 0px 0px 0px; background-color: white">
 		<hr />
 		<div align="center">
-			<font color="Blue">Books Requested Pending </font> <font color="red">(<span
+			<font color="Blue">Books Requests to be approved</font> <font color="red">(<span
 				id="count"> </span>)
 			</font>
 		</div>
 		<hr />
+		<div id="reqdiv" align="center" style="display:none;font: 25px arial,sans-serif;">
+            No book requests for approval.
+        </div>
 		<div class="row" style="text-align: center">
 			<div id="listinng">
 			
@@ -565,6 +570,9 @@ font {
 			<font color="Blue">Books Lent out</font>
 		</div>
 		<hr />
+		 <div id="lentdiv" align="center" style="display:none;font:25px arial, sans-serif;">
+             You haven't lent books to anyone.
+        </div>
 		<div class="row" style="text-align: center">
 			<div id="listingg"></div>
 
@@ -579,7 +587,7 @@ font {
 		loadListing();
 	})
 	
-var user1;
+    var user1;
 	var result1;
 	function getbookids() {
 		var name = localStorage.getItem("user_name");
@@ -591,13 +599,20 @@ var user1;
 			async : false,
 			dataType : "json", // data type of response
 			success : function(result) {
-				result1=result;
-		//	console.log(result);
+			if(result.length==0)
+			{
+				$("#reqdiv").show();
+				$("#lentdiv").show();
+			}
+			else
+		    {
+			result1=result;
+		  	console.log(result);
 			for (var i in result) 
 			{
 				loadListings(result[i]);
-				
 			}
+		    }
 			},
 			error : function() {
 				swal("error occurred");
@@ -620,11 +635,9 @@ var user1;
 			contentType : 'application/json',
 			url : new_url,
 			async : false,
-			dataType : "json", // data type of response
 			success : function(users) {
-				
-				$("#count").text(users.length);
-				//console.log("chim nnnnn "+users);
+				//$("#count").text(users.length);
+				console.log("chim nnnnn "+users);
 				for ( var i in users) {
 					//console.log("cre "+ users[i].id);
 					user1=users[i];
@@ -714,7 +727,7 @@ var user1;
 		$.ajax({
 			type : 'GET',
 			contentType : 'application/json',
-			url : " http://localhost:8080/thebooklender/api/books/lentbooks/" + ownerId,
+			url : "http://localhost:"+location.port+"/thebooklender/api/books/lentbooks/" + ownerId,
 			async : false,
 			dataType : "json", // data type of response
 			success : function(result) {
@@ -746,7 +759,7 @@ var user1;
 							"src='" + result.image+"' alt=''>"
 					+ "</div></div>"
 					+ "<div style = 'font-size:16px; text-align:centre'>"
-					+ result.tittle
+					+ result.title
 					+ "</div>"
 					+ "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;"
 					+ result.isbn
@@ -774,7 +787,7 @@ var user1;
 						"src='" +image+"' alt=''>"
 					+ "</div></div>"
 					+ "<div style = 'font-size:16px; text-align:centre'>"
-					+ result.tittle
+					+ result.title
 					+ "</div>"
 					+ "<div style = 'font-size:16px; text-align:centre'>ISBN:&nbsp;&nbsp;"
 					+ result.isbn
@@ -929,9 +942,11 @@ var user1;
 				async : false,
 				success : function(data ) {
 					console.log(data);
-					alert("You have submitted request to get your book.")
+				  swal({
+					  title: "You have submitted request to get your book.",
+					  icon: "success",
+					});
 					checkbuttonexists(bookid);
-					
 				},
 				error : function() {
 					alert("error occurred");
@@ -950,6 +965,10 @@ var user1;
 					async : false,
 					success : function(data ) {
 						console.log(data);
+						  swal({
+							  title: "You have confirmed  that your recieved your book.",
+							  icon: "success",
+							});
 					},
 					error : function() {
 						alert("error occurred");
@@ -1073,7 +1092,7 @@ var user1;
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;

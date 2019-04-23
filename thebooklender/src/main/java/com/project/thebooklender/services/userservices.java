@@ -52,7 +52,7 @@ public class userservices {
 	@Consumes("application/json")
 	public Response updateUser(@QueryParam("userid") int id,User user)
 	{
-		    if(!(user.getId()>0)) user.setId(id);
+		    user.setId(id);
 		    System.out.print("update user");
 			user.setUser_name(user.getUser_name());
 			user.setPassword(user.getPassword());

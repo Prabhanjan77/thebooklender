@@ -10,8 +10,8 @@
 <script src="js/register.js"></script>
 <script src="js/login.js"></script>
  <script src="js/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> 
-<link rel="stylesheet" href="node_modules/sweetalert/dist/sweetalert.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 <link rel="stylesheet" type="text/css" href="./css/Bootstrap.min.css">
 
@@ -27,10 +27,7 @@
 <link rel="stylesheet" href="assets/css/rateit.css">
 <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-<link rel="stylesheet"
-	href="//img1a.flixcart.com/www/linchpin/fk-cp-zion/css/app.chunk.5eb25c.css" />
-<link rel="stylesheet"
-	href="//img1a.flixcart.com/www/linchpin/fk-cp-zion/css/Home.chunk.b02da8.css" />
+
 <!-- Fonts -->
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700'
@@ -216,7 +213,7 @@ a {
 								<div>
 									<form id="loginForm" autocomplete="off">
 										<div class="_39M2dM">
-											<input type="text" name="email" autocomplete="off"
+											<input type="text" name="user_email" autocomplete="off"
 												autofocus="" class="_2zrpKA" value=""
 												placeholder="Enter Email Id"> <span class="s-YM1W"></span>
 											<!--<label class="b5konl"><span>Enter Email/Mobile number</span></label>-->
@@ -279,7 +276,7 @@ a {
 									<form>
 										<!-- added id 'mob1' here -->
 										<div class="_39M2dM">
-											<input type="email" maxlength="100" autocomplete="off"
+											<input type="user_email" maxlength="100" autocomplete="off"
 												class="_2zrpKA" value="" id="email1"
 												placeholder="Enter Email Id"> <span class="s-YM1W"></span><label
 												class="b5konl"> <!--<span>Enter Mobile number</span>-->
@@ -456,10 +453,10 @@ a {
 							<div class="col-xs-3 col-sm-2 col-md-3 gallery-holder">
 								<div id="gallery"
 									class="product-item-holder size-big single-product-gallery small-gallery round3">
-
 								</div>
 								<!-- /.single-product-gallery -->
-								<div class="beforerequest">
+								<hr>
+								<div class="beforerequest" align:"center">
 									<form>
 										<table>
 											<tr>
@@ -472,7 +469,10 @@ a {
 										</table>
 									</form>
 								</div>
-								<div class="afterrequest">
+								<div id="myDIV" align="center" style="display:none;font: 25px arial, sans-serif;">
+                         Sorry , The above book has been taken by lended by someone.
+        </div>
+								<div class="afterrequest" style="display:none">
 									<form>
 										<table>
 											<tr>
@@ -498,22 +498,6 @@ a {
 											<span style="font-size: 14px" id='book_id'></span>
 										</div>
 										<div class="col-sm-4" style="padding-right: 0px;"></div>
-									</div>
-									<div class='stock-container info-container m-t-10'>
-										<div class='row'>
-											<div class='col-sm-2'>
-												<div class='stock-box' style="padding-left: 0px">
-													<span style="font-size: 14px">
-														&nbsp;&nbsp;Availability </span>
-												</div>
-											</div>
-											<div class='col-sm-9' style="padding-left: 0px">
-												<div class='stock-box' style="padding-left: 0px">
-													<span style="color: red; font-size: 14px" id='aval'></span>
-													<span hidden="hidden" id='available_quant'></span>
-												</div>
-											</div>
-										</div>
 									</div>
 									<br /> <b>&nbsp;&nbsp;About Book:&nbsp;&nbsp;</b> <span
 										class='description-container m-t-20' style="font-size: 14px"
@@ -561,7 +545,6 @@ a {
 
 <script>
 	$(document).ready(function() {
-		$(".afterrequest").hide();
 		$("p").hide();
 		var ownerId=localStorage.getItem("id"); 
 	    if (ownerId == "")
@@ -574,6 +557,7 @@ a {
 	    	displaybook();
 	    }
 	    userIsRequester();
+	    isInTransaction();
 	});
 
 	var chck;
@@ -677,7 +661,11 @@ a {
 			url : ctxPath + "/api/books/requestbook?id=" + bookId + "&requestedby=" + userId,
 			data : userdetails,
 			success : function() {
-				   alert("You request has been sent successfully");
+				swal({
+					  title: "Request Sent",
+					  icon: "success",
+					});
+				  // alert("You request has been sent successfully");
 				//	swal("You request has been sent successfully");
 					userIsRequester();
 				}
@@ -725,9 +713,36 @@ a {
 			url : ctxPath + "/api/books/cancelbook?bookid="+ bookId + "&userid=" + userId,
 			data : userdetails,
 			success : function(result) {
-				alert("You have cancelled book request");
+				swal({
+					  title: "Request Cancelled",
+					  icon: "success",
+					});
 				$(".afterrequest").hide();
 				$(".beforerequest").show();
+			}
+		});
+	}
+	
+	
+
+	function isInTransaction() {
+		var userId=localStorage.getItem("id"); 
+		console.log("reqcheck " + userId);
+		var URL = 'http://localhost:' + location.port+ '/thebooklender/item.html';
+		var bookId = getURLParameter('bookId', URL);
+		var ctxPath = "http://localhost:" + location.port + "/thebooklender";
+		$.ajax({
+			type: 'GET',
+			contentType : 'application/json',
+			url : ctxPath + "/api/books/isexistsInTransaction?bookid="+ bookId,
+			success : function(result) {
+				console.log("isin " + result);
+				if(result==1)
+					{
+					   $("#requestbook").hide();
+					   $("#myDIV").show();
+					}
+				
 			}
 		});
 	}
@@ -793,7 +808,7 @@ a {
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;

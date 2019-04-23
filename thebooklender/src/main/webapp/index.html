@@ -1930,7 +1930,7 @@ select, input[type=text], input[type=password] {
 				searchVal=ani[i].id;
 			}
 		}
-		window.location.href = "http://localhost:8080/thebooklender/item.html?bookId="+searchVal;
+		window.location.href = "http://localhost:"+location.port+"/thebooklender/item.html?bookId="+searchVal;
 		
 		/* if(items.includes(selectedItem)==true)
 			window.location.href = "item.jsp?id="+selectedId;
@@ -2245,13 +2245,13 @@ function newProductsAll1()
 function loginpopupreq()
 {
 		console.log("clik");
-		window.location.href="http://localhost:8080/thebooklender/allbooks.html";
+		window.location.href= "http://localhost:"+location.port+"/thebooklender/allbooks.html";
 }
 
 function loginpopuplend()
 {
 		console.log("clik");
-		window.location.href="http://localhost:8080/thebooklender/addbook.html";
+		window.location.href="http://localhost:"+location.port+"/thebooklender/addbook.html";
 }
 
 
