@@ -682,7 +682,7 @@ font {
 					"</button><button class='btn btn-primary' onclick='acceptrequest("+result.id+","+users.id+","+j+")' type='button'>Add Request</button>"
 				+"		</td> "+	"<td >"+
 				"<button data-toggle='dropdown' type='button'>"+
-				"</button><button class='btn btn-primary cart-btn' onclick='rejectrequest()' type='button'>Reject Request</button>"
+				"</button><button class='btn btn-primary cart-btn' onclick='rejectrequest("+result.id+","+users.id+","+j+")' type='button'>Reject Request</button>"
 				+
 				"</td> </tr></table>	</div></div>";
 
@@ -710,12 +710,11 @@ font {
 					"</button><button class='btn btn-primary' onclick='acceptrequest("+result.id+","+users.id+","+j+")' type='button'>Add Request</button>"
 				+"		</td> "+	"<td >"+
 				"<button data-toggle='dropdown' type='button'>"+
-				"</button><button class='btn btn-primary cart-btn' onclick='rejectrequest()' type='button'>Reject Request</button>"
+				"</button><button class='btn btn-primary cart-btn' onclick='rejectrequest("+result.id+","+users.id+","+j+")' type='button'>Reject Request</button>"
 				+
 				"</td> </tr></table>	</div></div>";
 			data += "</div>";
 		}
-		//console.log(data);
 		$('#listinng').append(data);
 
 	}
@@ -874,62 +873,23 @@ font {
 		$("#accept"+j).hide();
 	}
 		
-	function rejectrequest(){
-		var myurl="http://localhost:"+location.port+"/thebooklender/api/books/cancelbook?bookid="+result+"&userid="+user;
-	console.log(myurl);
-			$.ajax({
-			type : 'GET',
+	function rejectrequest(result,user,j) {
+		var bookId = result;
+		var userId = user;
+		console.log(bookId+" "+userId);
+		var ctxPath = "http://localhost:" + location.port + "/thebooklender";
+		$.ajax({
+			type: 'POST',
 			contentType : 'application/json',
-			url : "http://localhost:"+location.port+"/thebooklender/api/books/requestedby?bookid="+result+"&userid="+user,
-			async : false,
-			dataType : "json", // data type of response
-			success : function(data ) {
-				console.log(data);
-				
-				callyou(data,result,user);
-			},
-			error : function() {
-				alert("error occurred");
+			url : ctxPath + "/api/books/rejectrequest?bookid="+ bookId + "&userid=" + userId,
+			success : function(result) {
+				swal({
+					  title: "Request Rejected",
+					  icon: "success",
+					});
+				window.location.reload(true);
 			}
 		});
-		
-	}	
-		
-		
-		function callyou(result,bookid,user){
-			console.log("print id ="+result);
-			console.log("anirudh");
-			console.log("c ="+result);
-			console.log("u ="+user);
-			var lenderId = localStorage.getItem("id");
-			var bookId = bookid;
-			var borrowerId = user;
-			//console.log(user1);
-			
-		var txn_id = result;
-		console.log(txn_id);
-		var txnbody = JSON.stringify({
-			"id" :  bookId,
-			"owner_id" : lenderId,
-		});
-		console.log(txnbody);
-		var print="http://localhost:"+location.port+"/thebooklender/api/books/issuebook?borrowerid=" + user;
-		console.log(print);
-		$.ajax({
-			type : 'POST',
-			contentType : 'application/json',
-			url : "http://localhost:"+location.port+"/thebooklender/api/books/issuebook?borrowerid=" + user,
-			async : false,
-			data : txnbody,
-			dataType : "json", // data type of response
-			success : function() {
-				window.location.reload(true);
-				//console.log(result);
-				//alert("you have confirm requested");
-			},
-			
-		});
-		window.location.reload(true);
 	}
 	
 		function getBookBack(id){
@@ -953,7 +913,7 @@ font {
 				}
 			});
 		}	
-		
+		         
 		function gotBook(id)
 		{
 			var URL="http://localhost:"+location.port+"/thebooklender/api/books/gotbook?bookid="+id;
