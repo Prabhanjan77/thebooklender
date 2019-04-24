@@ -168,7 +168,7 @@ public class userdao {
 }
 	public Boolean validateUsername(String email) 
 	{
-		String logHaed="userdao.class :: getUserByEmail()";
+		String logHaed="userdao.class :: validateUsername()";
 		Boolean result=false;
 		java.sql.Connection conn=null;
 		java.sql.ResultSet rs = null;

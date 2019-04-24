@@ -422,7 +422,7 @@ public class bookdao {
 	}
 		
 	public int issueBook(Transaction txn) {
-		String logHaed = "bookdao.class :: requestBook() ";
+		String logHaed = "bookdao.class :: issueBook() ";
 		int result = -1;
 		List<Integer> list = new ArrayList<>();
 		java.sql.Connection conn = null;
@@ -459,7 +459,7 @@ public class bookdao {
 	}
 	
 	public List<Integer> getPendingRequestsByBorrower(int userid) {
-		String logHaed = "bookdao.class :: getPendingRequests() ";
+		String logHaed = "bookdao.class :: getPendingRequestsByBorrower() ";
 		int result = -1;
         ArrayList<Integer> list = new ArrayList<>();
 		java.sql.Connection conn = null;
@@ -540,7 +540,7 @@ public class bookdao {
 	}
 	
 	public List<Integer> getBorrowBookIDsByUserId(int id) {
-		String logHaed = "bookdao.class :: getLentBooksByUserId() ";
+		String logHaed = "bookdao.class :: getBorrowBookIDsByUserId() ";
 		int result = -1;
 		java.sql.Connection conn = null;
 		java.sql.ResultSet rs = null;
@@ -579,7 +579,7 @@ public class bookdao {
      
 	public List<Integer> getUsersRequestedBooks(int bookid) {
 		// get users who requested this particular book
-		String logHaed = "bookdao.class :: getrequestedBooks() ";
+		String logHaed = "bookdao.class :: getUsersRequestedBooks() ";
 		int result = -1;
 		List<Integer> list = new ArrayList<>();
 		java.sql.Connection conn = null;
@@ -616,7 +616,7 @@ public class bookdao {
 	}
 	
 	public int getUsersRequestedBookID(int bookid,int userid) {
-		String logHaed = "bookdao.class :: getrequestedBooks() ";
+		String logHaed = "bookdao.class :: getUsersRequestedBookID() ";
 		int result = -1;
 	    int ID=-2;
 		java.sql.Connection conn = null;
@@ -729,7 +729,7 @@ public class bookdao {
 	}
 	
 	public Requestlog getBookDetailsFromTranscation(int bookid) {
-		String logHaed = "bookdao.class :: returnBook() ";
+		String logHaed = "bookdao.class :: getBookDetailsFromTranscation() ";
 		int result = -1;
 		Book book = new Book();
 		java.sql.Connection conn = null;
@@ -856,7 +856,7 @@ public class bookdao {
 	}
 	
 	public int getBookBack(Requestlog rl) {
-		String logHaed = "bookdao.class :: returnBook() ";
+		String logHaed = "bookdao.class :: getBookBack() ";
 		int result = -1;
 		Book book = new Book();
 		java.sql.Connection conn = null;
@@ -893,7 +893,7 @@ public class bookdao {
 	}
 	
 	public Requestlog checkButtonReturnBook(int bookid) {
-		String logHaed = "bookdao.class :: returnBook() ";
+		String logHaed = "bookdao.class :: checkButtonReturnBook() ";
 		int result = -1;
 		Book book = new Book();
 		java.sql.Connection conn = null;
@@ -936,7 +936,7 @@ public class bookdao {
 	}
 	
 	public ArrayList<Book> getBooks() {
-		String logHaed = "bookdao.class :: getBookByUserId() ";
+		String logHaed = "bookdao.class :: getBooks() ";
 		int result = -1;
 		ArrayList<Book> booklist = new ArrayList<>();
 		java.sql.Connection conn = null;
